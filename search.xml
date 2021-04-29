@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>「傳值」或「傳址」？</title>
-    <url>/2021/04/29/%E3%80%8C%E5%82%B3%E5%80%BC%E3%80%8D%E6%88%96%E3%80%8C%E5%82%B3%E5%9D%80%E3%80%8D%EF%BC%9F/</url>
+    <url>/20210429/490932.html</url>
     <content><![CDATA[<h2 id="基本型別"><a href="#基本型別" class="headerlink" title="基本型別"></a>基本型別</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
 <p>在基本型別時，會認為兩個變數的「值」是相等的，因為兩個變數的「值」都是 <code>10</code> ，同樣的在字串的情況下也是相同的。</p>
@@ -51,7 +51,7 @@
   </entry>
   <entry>
     <title>Git commit 規範</title>
-    <url>/2021/04/29/%E8%A6%8F%E7%AF%84/</url>
+    <url>/20210429/297699.html</url>
     <content><![CDATA[<blockquote>
 <p>Commit Message 最好兼俱 Why 及 What，讓日後進行維護人員更快進入狀況。</p>
 </blockquote>
