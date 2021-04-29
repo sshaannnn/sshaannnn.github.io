@@ -28,7 +28,7 @@
 <meta property="og:description" content="此篇文章來自於某天主管突然要我把某篇很長的git規範整理成言簡意賅的版本。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2021-04-29T03:56:44.000Z">
-<meta property="article:modified_time" content="2021-04-29T06:05:21.867Z">
+<meta property="article:modified_time" content="2021-04-29T07:02:33.055Z">
 <meta property="article:author" content="SHAN WU">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -185,7 +185,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-04-29 11:56:44 / 修改時間：14:05:21" itemprop="dateCreated datePublished" datetime="2021-04-29T11:56:44+08:00">2021-04-29</time>
+              <time title="創建時間：2021-04-29 11:56:44 / 修改時間：15:02:33" itemprop="dateCreated datePublished" datetime="2021-04-29T11:56:44+08:00">2021-04-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,9 +229,9 @@
 <h3 id="Commit-Message-規範組成"><a href="#Commit-Message-規範組成" class="headerlink" title="Commit Message 規範組成"></a>Commit Message 規範組成</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header:<span class="tag">&lt;<span class="name">type</span>&gt;</span>(<span class="tag">&lt;<span class="name">scope</span>&gt;</span>): <span class="tag">&lt;<span class="name">subject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>type：代表 commit 的類別：feat、fix、docs、style,、refactor、test、chore，<font color=#FF0000><strong>必要</strong></font>欄位。</li>
-<li>scope：代表 commit 影響的範圍，例如資料庫、控制層、模板層等等，視專案不同而不同，為<font color=#FF0000><strong>可選</strong></font>欄位。</li>
-<li>subject：代表此 commit 的簡短描述，不要超過 50 個字元，結尾不要加句號，為<font color=#FF0000><strong>必要</strong></font>欄位。</li>
+<li>type：代表 commit 的類別：feat、fix、docs、style,、refactor、test、chore，<strong>必要</strong></font>欄位。</li>
+<li>scope：代表 commit 影響的範圍，例如資料庫、控制層、模板層等等，視專案不同而不同，為<strong>可選</strong></font>欄位。</li>
+<li>subject：代表此 commit 的簡短描述，不要超過 50 個字元，結尾不要加句號，為<strong>必要</strong></font>欄位。</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body: 對本次 Commit 的詳細描述，說明程式碼變動的項目與原因，還有與先前行為的對比，可分成多行，每一行不要超過 72 個字元。</span><br></pre></td></tr></table></figure>
 
@@ -259,6 +259,8 @@
 </li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">feat: message 信件通知功能</span><br><span class="line"></span><br><span class="line">因應新需求做調整：</span><br><span class="line">通知和 message 都要寄發每日信件，</span><br><span class="line">通知和 message 都用放在同一封信裡面就好，</span><br><span class="line">不然信件太多可能也不會有人想去看。</span><br><span class="line"></span><br><span class="line">調整項目：</span><br><span class="line">1. mail_template.php，新增 message 區塊。</span><br><span class="line">2. Send_today_notify_mail.php，新增 取得每日 Message 邏輯。</span><br><span class="line">3. Message_model_api.php，新增 $where 參數，以便取得每日訊息。</span><br><span class="line">4. Message_api.php、Message_group_user_model_api.php，新增 取得訊息使用者邏輯，以便撈取每日訊息。</span><br><span class="line"></span><br><span class="line">issue #863</span><br></pre></td></tr></table></figure>
+
+<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a target="_blank" rel="noopener" href="https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html">Git Commit Message 這樣寫會更好，替專案引入規範與範例</a></em></p>
 
     </div>
 
@@ -349,7 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-Message-%E8%A6%8F%E7%AF%84%E7%B5%84%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">Commit Message 規範組成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type-%E5%8F%AA%E5%85%81%E8%A8%B1%E4%BD%BF%E7%94%A8%E4%BB%A5%E4%B8%8B%E9%A1%9E%E5%88%A5"><span class="nav-number">2.</span> <span class="nav-text">type 只允許使用以下類別</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-%E8%A8%8A%E6%81%AF%E7%AF%84%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">Commit 訊息範例</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-Message-%E8%A6%8F%E7%AF%84%E7%B5%84%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">Commit Message 規範組成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type-%E5%8F%AA%E5%85%81%E8%A8%B1%E4%BD%BF%E7%94%A8%E4%BB%A5%E4%B8%8B%E9%A1%9E%E5%88%A5"><span class="nav-number">2.</span> <span class="nav-text">type 只允許使用以下類別</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-%E8%A8%8A%E6%81%AF%E7%AF%84%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">Commit 訊息範例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">參考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

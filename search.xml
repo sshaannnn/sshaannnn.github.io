@@ -61,9 +61,9 @@
 <h3 id="Commit-Message-規範組成"><a href="#Commit-Message-規範組成" class="headerlink" title="Commit Message 規範組成"></a>Commit Message 規範組成</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">header:<span class="tag">&lt;<span class="name">type</span>&gt;</span>(<span class="tag">&lt;<span class="name">scope</span>&gt;</span>): <span class="tag">&lt;<span class="name">subject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>type：代表 commit 的類別：feat、fix、docs、style,、refactor、test、chore，<font color=#FF0000><strong>必要</strong></font>欄位。</li>
-<li>scope：代表 commit 影響的範圍，例如資料庫、控制層、模板層等等，視專案不同而不同，為<font color=#FF0000><strong>可選</strong></font>欄位。</li>
-<li>subject：代表此 commit 的簡短描述，不要超過 50 個字元，結尾不要加句號，為<font color=#FF0000><strong>必要</strong></font>欄位。</li>
+<li>type：代表 commit 的類別：feat、fix、docs、style,、refactor、test、chore，<strong>必要</strong></font>欄位。</li>
+<li>scope：代表 commit 影響的範圍，例如資料庫、控制層、模板層等等，視專案不同而不同，為<strong>可選</strong></font>欄位。</li>
+<li>subject：代表此 commit 的簡短描述，不要超過 50 個字元，結尾不要加句號，為<strong>必要</strong></font>欄位。</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">body: 對本次 Commit 的詳細描述，說明程式碼變動的項目與原因，還有與先前行為的對比，可分成多行，每一行不要超過 72 個字元。</span><br></pre></td></tr></table></figure>
 
@@ -91,6 +91,8 @@
 </li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">feat: message 信件通知功能</span><br><span class="line"></span><br><span class="line">因應新需求做調整：</span><br><span class="line">通知和 message 都要寄發每日信件，</span><br><span class="line">通知和 message 都用放在同一封信裡面就好，</span><br><span class="line">不然信件太多可能也不會有人想去看。</span><br><span class="line"></span><br><span class="line">調整項目：</span><br><span class="line">1. mail_template.php，新增 message 區塊。</span><br><span class="line">2. Send_today_notify_mail.php，新增 取得每日 Message 邏輯。</span><br><span class="line">3. Message_model_api.php，新增 $where 參數，以便取得每日訊息。</span><br><span class="line">4. Message_api.php、Message_group_user_model_api.php，新增 取得訊息使用者邏輯，以便撈取每日訊息。</span><br><span class="line"></span><br><span class="line">issue #863</span><br></pre></td></tr></table></figure>
+
+<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a href="https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html">Git Commit Message 這樣寫會更好，替專案引入規範與範例</a></em></p>
 ]]></content>
       <categories>
         <category>Git</category>
