@@ -28,7 +28,7 @@
 <meta property="og:description" content="Javascript到底是「傳值」還是「傳址」？">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2021-04-20T03:24:23.000Z">
-<meta property="article:modified_time" content="2021-04-29T08:31:23.025Z">
+<meta property="article:modified_time" content="2021-04-29T08:43:45.743Z">
 <meta property="article:author" content="SHAN WU">
 <meta property="article:tag" content="Frontend">
 <meta name="twitter:card" content="summary">
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-29 16:31:23" itemprop="dateModified" datetime="2021-04-29T16:31:23+08:00">2021-04-29</time>
+                <time title="修改時間：2021-04-29 16:43:45" itemprop="dateModified" datetime="2021-04-29T16:43:45+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -236,7 +236,7 @@
 
 <p>因此在<strong>基本型別</strong>（如<code>string</code>、<code>number</code>、<code>boolean</code>、<code>null</code>、<code>undefined</code>），判斷兩個變數是否相等，看的是裡面的內容，也就是裡面的「值」。</p>
 <p>繼續來看：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line">c++</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a );    <span class="comment">//10</span></span><br><span class="line"><span class="built_in">console</span>.log( c );   <span class="comment">// 11</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line">c++</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a );   <span class="comment">//10</span></span><br><span class="line"><span class="built_in">console</span>.log( c );   <span class="comment">// 11</span></span><br></pre></td></tr></table></figure>
 
 <p>當 <code>c</code> 指定 <code>a</code> 時，由於 <code>a</code> 是<strong>基本型別</strong>，所以 <code>c</code> 得到的是 <code>a</code> 的值而不是 <code>a</code> 的記憶體位置，所以儘管 <code>c</code> 改變了 <code>a</code> 也不會受到引響，兩者是獨立的。</p>
 <p>當指定（賦值）一個<strong>基本型別</strong>給變數，就稱作「傳值」(pass by value)。</p>
