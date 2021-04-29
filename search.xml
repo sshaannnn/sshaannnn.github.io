@@ -4,26 +4,33 @@
     <title>「傳值」或「傳址」？</title>
     <url>/2021/04/29/%E3%80%8C%E5%82%B3%E5%80%BC%E3%80%8D%E6%88%96%E3%80%8C%E5%82%B3%E5%9D%80%E3%80%8D%EF%BC%9F/</url>
     <content><![CDATA[<h2 id="基本型別"><a href="#基本型別" class="headerlink" title="基本型別"></a>基本型別</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <p>在基本型別時，會認為兩個變數的「值」是相等的，因為兩個變數的「值」都是 <code>10</code> ，同樣的在字串的情況下也是相同的。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&#x27;yswu&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">&#x27;yswu&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&#x27;wu&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === c );      <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <p>因此在<strong>基本型別</strong>（如<code>string</code>、<code>number</code>、<code>boolean</code>、<code>null</code>、<code>undefined</code>），判斷兩個變數是否相等，看的是裡面的內容，也就是裡面的「值」。</p>
 <p>繼續來看：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line">c++</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a );    <span class="comment">//10</span></span><br><span class="line"><span class="built_in">console</span>.log( c );   <span class="comment">// 11</span></span><br></pre></td></tr></table></figure>
+
 <p>當 <code>c</code> 指定 <code>a</code> 時，由於 <code>a</code> 是<strong>基本型別</strong>，所以 <code>c</code> 得到的是 <code>a</code> 的值而不是 <code>a</code> 的記憶體位置，所以儘管 <code>c</code> 改變了 <code>a</code> 也不會受到引響，兩者是獨立的。</p>
 <p>當指定（賦值）一個<strong>基本型別</strong>給變數，就稱作「傳值」(pass by value)。</p>
 <h2 id="物件型別"><a href="#物件型別" class="headerlink" title="物件型別"></a>物件型別</h2><p>在物件的情況下，先分別宣告兩個物件，兩個物件都有個<code>value</code>的屬性。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );      <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
 <p>可以觀察到，<code>obj1</code> 和 <code>obj2</code> 的屬性和值都相同，得到的卻是false。</p>
 <p>這是因為在JavaScript物件，可以把object當作是獨立存在的實體，兩者的記憶體位置並不相同，在比較<strong>物件型別</strong>時，比較的是記憶體位置，而非值。</p>
 <p>繼續來看：將 <code>obj2</code> 利用 <code>obj2 = obj1</code> 的方式來賦值。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );      <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">obj1.value = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log( obj2.value );      <span class="comment">//1 </span></span><br><span class="line"></span><br><span class="line">obj1.flag = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log ( obj2.flag );      <span class="comment">//true </span></span><br></pre></td></tr></table></figure>
+
 <p>在這邊可以看到，因為 <code>obj1</code> 與 <code>obj2</code> 兩者變數指向相同的記憶體位置，所以 <code>obj1</code> 做修改或新增， <code>obj2</code> 也會跟著改變。</p>
 <p>但將 <code>obj1</code> 賦值新的物件時：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">obj1 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
 <p>此時因為 <code>obj1</code>指向新的記憶體位置，而 <code>obj2</code> 還在原來的記憶體位置，因此 <code>obj1</code> 和 <code>obj2</code> 就沒有關係了。</p>
 <p>當指定（賦值）一個<strong>物件型別</strong>給變數，就稱作「傳址」(pass by reference)。</p>
 <h2 id="JavaScript-是「傳值」或「傳址」"><a href="#JavaScript-是「傳值」或「傳址」" class="headerlink" title="JavaScript 是「傳值」或「傳址」?"></a>JavaScript 是「傳值」或「傳址」?</h2><p>在大多數的情況下，基本型別是「傳值」，而物件型別會是「傳址」的方式，但<strong>凡事都有例外</strong>。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj = &#123; <span class="attr">value</span>: <span class="number">999</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);  <span class="comment">// &#123; value: 10 &#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>前面說過物件是利用「傳址」的方式來更新資料，那應該會變成 <code>&#123; value: 999 &#125;</code> 怎麼還是一樣的呢？</p>
 <p>事實上，JavaScript 不屬於單純的「pass by value」或「pass by reference」。 更準確一點來說，JavaScript 應該屬於透過 <code>pass by sharing</code> 來傳遞資料。</p>
 <h2 id="Pass-by-sharing"><a href="#Pass-by-sharing" class="headerlink" title="Pass by sharing"></a>Pass by sharing</h2><p>「Pass by sharing」的特點在於，當 <code>function</code> 的參數，如 <code>function changeValue(obj)&#123; ... &#125;</code> 中的 <code>obj</code> 被重新賦值的時候，外部變數的內容是不會被影響的。</p>
@@ -48,14 +55,16 @@
     <content><![CDATA[<blockquote>
 <p>Commit Message 最好兼俱 Why 及 What，讓日後進行維護人員更快進入狀況。</p>
 </blockquote>
-<h3 id="Commit-Message-規範組成"><a href="#Commit-Message-規範組成" class="headerlink" title="Commit Message 規範組成"></a>Commit Message 規範組成</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">header:&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Commit-Message-規範組成"><a href="#Commit-Message-規範組成" class="headerlink" title="Commit Message 規範組成"></a>Commit Message 規範組成</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">header:<span class="tag">&lt;<span class="name">type</span>&gt;</span>(<span class="tag">&lt;<span class="name">scope</span>&gt;</span>): <span class="tag">&lt;<span class="name">subject</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>type：代表 commit 的類別：feat、fix、docs、style,、refactor、test、chore，    <font color=#FF0000><strong>必要</strong></font>欄位。</li>
+<li>type：代表 commit 的類別：feat、fix、docs、style,、refactor、test、chore，<font color=#FF0000><strong>必要</strong></font>欄位。</li>
 <li>scope：代表 commit 影響的範圍，例如資料庫、控制層、模板層等等，視專案不同而不同，為<font color=#FF0000><strong>可選</strong></font>欄位。</li>
 <li>subject：代表此 commit 的簡短描述，不要超過 50 個字元，結尾不要加句號，為<font color=#FF0000><strong>必要</strong></font>欄位。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">body: 對本次 Commit 的詳細描述，說明程式碼變動的項目與原因，還有與先前行為的對比，可分成多行，每一行不要超過 72 個字元。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">footer:填寫任務編號(如果有的話) &#x2F; BREAKING CHANGE (中斷性變更)(可忽略)。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">body: 對本次 Commit 的詳細描述，說明程式碼變動的項目與原因，還有與先前行為的對比，可分成多行，每一行不要超過 72 個字元。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">footer:填寫任務編號(如果有的話) / BREAKING CHANGE (中斷性變更)(可忽略)。</span><br></pre></td></tr></table></figure>
 
 <h3 id="type-只允許使用以下類別"><a href="#type-只允許使用以下類別" class="headerlink" title="type 只允許使用以下類別"></a>type 只允許使用以下類別</h3><ul>
 <li>feat: 新增/修改功能 (feature)。</li>
@@ -72,15 +81,13 @@
 <p>Type 是用來告訴進行 Code Review 的人應該以什麼態度來檢視 Commit 內容。</p>
 </blockquote>
 <h3 id="Commit-訊息範例"><a href="#Commit-訊息範例" class="headerlink" title="Commit 訊息範例"></a>Commit 訊息範例</h3><ul>
-<li><p>only header </p>
-<p><code>1. fix: 自訂表單新增/編輯頁面，修正離開頁面提醒邏輯</code></p>
-<p><code>2. feat: message 信件通知功能</code></p>
-<p><code>3. chore: 更新 testing 環境</code></p>
-<p><code>4. feat: message 信件通知功能</code></p>
+<li><p>only header</p>
+<p><code>1. fix: 自訂表單新增/編輯頁面，修正離開頁面提醒邏輯</code><br><code>2. feat: message 信件通知功能</code><br><code>3. chore: 更新 testing 環境</code><br><code>4. feat: message 信件通知功能</code></p>
 </li>
 <li><p>header+body+footer</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">feat: message 信件通知功能</span><br><span class="line"></span><br><span class="line">因應新需求做調整：</span><br><span class="line">通知和 message 都要寄發每日信件，</span><br><span class="line">通知和 message 都用放在同一封信裡面就好，</span><br><span class="line">不然信件太多可能也不會有人想去看。</span><br><span class="line"></span><br><span class="line">調整項目：</span><br><span class="line">1. mail_template.php，新增 message 區塊。</span><br><span class="line">2. Send_today_notify_mail.php，新增 取得每日 Message 邏輯。</span><br><span class="line">3. Message_model_api.php，新增 $where 參數，以便取得每日訊息。</span><br><span class="line">4. Message_api.php、Message_group_user_model_api.php，新增 取得訊息使用者邏輯，以便撈取每日訊息。</span><br><span class="line"></span><br><span class="line">issue #863</span><br></pre></td></tr></table></figure></li>
+</li>
 </ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">feat: message 信件通知功能</span><br><span class="line"></span><br><span class="line">因應新需求做調整：</span><br><span class="line">通知和 message 都要寄發每日信件，</span><br><span class="line">通知和 message 都用放在同一封信裡面就好，</span><br><span class="line">不然信件太多可能也不會有人想去看。</span><br><span class="line"></span><br><span class="line">調整項目：</span><br><span class="line">1. mail_template.php，新增 message 區塊。</span><br><span class="line">2. Send_today_notify_mail.php，新增 取得每日 Message 邏輯。</span><br><span class="line">3. Message_model_api.php，新增 $where 參數，以便取得每日訊息。</span><br><span class="line">4. Message_api.php、Message_group_user_model_api.php，新增 取得訊息使用者邏輯，以便撈取每日訊息。</span><br><span class="line"></span><br><span class="line">issue #863</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>Git</tag>

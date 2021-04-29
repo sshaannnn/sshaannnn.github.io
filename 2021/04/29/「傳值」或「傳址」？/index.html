@@ -28,7 +28,7 @@
 <meta property="og:description" content="Javascript是「傳值」或「傳址」？">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-29T03:24:23.000Z">
-<meta property="article:modified_time" content="2021-04-29T03:47:51.872Z">
+<meta property="article:modified_time" content="2021-04-29T04:09:04.130Z">
 <meta property="article:author" content="SHAN WU">
 <meta property="article:tag" content="Javascript">
 <meta name="twitter:card" content="summary">
@@ -180,7 +180,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-04-29 11:24:23 / Modified: 11:47:51" itemprop="dateCreated datePublished" datetime="2021-04-29T11:24:23+08:00">2021-04-29</time>
+              <time title="Created: 2021-04-29 11:24:23 / Modified: 12:09:04" itemprop="dateCreated datePublished" datetime="2021-04-29T11:24:23+08:00">2021-04-29</time>
             </span>
 
           
@@ -210,26 +210,33 @@
 
       
         <h2 id="基本型別"><a href="#基本型別" class="headerlink" title="基本型別"></a>基本型別</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <p>在基本型別時，會認為兩個變數的「值」是相等的，因為兩個變數的「值」都是 <code>10</code> ，同樣的在字串的情況下也是相同的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&#x27;yswu&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">&#x27;yswu&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&#x27;wu&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === c );      <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <p>因此在<strong>基本型別</strong>（如<code>string</code>、<code>number</code>、<code>boolean</code>、<code>null</code>、<code>undefined</code>），判斷兩個變數是否相等，看的是裡面的內容，也就是裡面的「值」。</p>
 <p>繼續來看：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line">c++</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a );    <span class="comment">//10</span></span><br><span class="line"><span class="built_in">console</span>.log( c );   <span class="comment">// 11</span></span><br></pre></td></tr></table></figure>
+
 <p>當 <code>c</code> 指定 <code>a</code> 時，由於 <code>a</code> 是<strong>基本型別</strong>，所以 <code>c</code> 得到的是 <code>a</code> 的值而不是 <code>a</code> 的記憶體位置，所以儘管 <code>c</code> 改變了 <code>a</code> 也不會受到引響，兩者是獨立的。</p>
 <p>當指定（賦值）一個<strong>基本型別</strong>給變數，就稱作「傳值」(pass by value)。</p>
 <h2 id="物件型別"><a href="#物件型別" class="headerlink" title="物件型別"></a>物件型別</h2><p>在物件的情況下，先分別宣告兩個物件，兩個物件都有個<code>value</code>的屬性。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );      <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
 <p>可以觀察到，<code>obj1</code> 和 <code>obj2</code> 的屬性和值都相同，得到的卻是false。</p>
 <p>這是因為在JavaScript物件，可以把object當作是獨立存在的實體，兩者的記憶體位置並不相同，在比較<strong>物件型別</strong>時，比較的是記憶體位置，而非值。</p>
 <p>繼續來看：將 <code>obj2</code> 利用 <code>obj2 = obj1</code> 的方式來賦值。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );      <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">obj1.value = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log( obj2.value );      <span class="comment">//1 </span></span><br><span class="line"></span><br><span class="line">obj1.flag = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log ( obj2.flag );      <span class="comment">//true </span></span><br></pre></td></tr></table></figure>
+
 <p>在這邊可以看到，因為 <code>obj1</code> 與 <code>obj2</code> 兩者變數指向相同的記憶體位置，所以 <code>obj1</code> 做修改或新增， <code>obj2</code> 也會跟著改變。</p>
 <p>但將 <code>obj1</code> 賦值新的物件時：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj1 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
 <p>此時因為 <code>obj1</code>指向新的記憶體位置，而 <code>obj2</code> 還在原來的記憶體位置，因此 <code>obj1</code> 和 <code>obj2</code> 就沒有關係了。</p>
 <p>當指定（賦值）一個<strong>物件型別</strong>給變數，就稱作「傳址」(pass by reference)。</p>
 <h2 id="JavaScript-是「傳值」或「傳址」"><a href="#JavaScript-是「傳值」或「傳址」" class="headerlink" title="JavaScript 是「傳值」或「傳址」?"></a>JavaScript 是「傳值」或「傳址」?</h2><p>在大多數的情況下，基本型別是「傳值」，而物件型別會是「傳址」的方式，但<strong>凡事都有例外</strong>。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj = &#123; <span class="attr">value</span>: <span class="number">999</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);  <span class="comment">// &#123; value: 10 &#125;</span></span><br></pre></td></tr></table></figure>
+
 <p>前面說過物件是利用「傳址」的方式來更新資料，那應該會變成 <code>&#123; value: 999 &#125;</code> 怎麼還是一樣的呢？</p>
 <p>事實上，JavaScript 不屬於單純的「pass by value」或「pass by reference」。 更準確一點來說，JavaScript 應該屬於透過 <code>pass by sharing</code> 來傳遞資料。</p>
 <h2 id="Pass-by-sharing"><a href="#Pass-by-sharing" class="headerlink" title="Pass by sharing"></a>Pass by sharing</h2><p>「Pass by sharing」的特點在於，當 <code>function</code> 的參數，如 <code>function changeValue(obj)&#123; ... &#125;</code> 中的 <code>obj</code> 被重新賦值的時候，外部變數的內容是不會被影響的。</p>
@@ -382,7 +389,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">文章僅為筆記內容</span>
+  <span class="author" itemprop="copyrightHolder">少女的腦內多巴胺</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
