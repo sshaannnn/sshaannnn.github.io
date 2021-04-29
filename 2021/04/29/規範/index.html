@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://example.com/about/index.html">
+  <meta name="description" content="Git commit 規範">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git commit 規範">
+<meta property="og:url" content="http://example.com/2021/04/29/%E8%A6%8F%E7%AF%84/index.html">
 <meta property="og:site_name" content="少女的腦內多巴胺">
+<meta property="og:description" content="Git commit 規範">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-29T03:33:35.000Z">
-<meta property="article:modified_time" content="2021-04-29T03:33:35.773Z">
+<meta property="article:published_time" content="2021-04-29T03:56:44.000Z">
+<meta property="article:modified_time" content="2021-04-29T03:59:36.226Z">
 <meta property="article:author" content="SHAN WU">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/about/">
+<link rel="canonical" href="http://example.com/2021/04/29/%E8%A6%8F%E7%AF%84/">
 
 
 <script id="page-configurations">
@@ -38,13 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>about | 少女的腦內多巴胺
-</title>
+  <title>Git commit 規範 | 少女的腦內多巴胺</title>
   
 
 
@@ -146,43 +148,133 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="en">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/29/%E8%A6%8F%E7%AF%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SHAN WU">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="少女的腦內多巴胺">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git commit 規範
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">about
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
 
-<div class="post-meta">
+              <time title="Created: 2021-04-29 11:56:44 / Modified: 11:59:36" itemprop="dateCreated datePublished" datetime="2021-04-29T11:56:44+08:00">2021-04-29</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/04/29/%E8%A6%8F%E7%AF%84/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/29/規範/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Git commit 規範</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Commit Message 最好兼俱 Why 及 What，讓日後進行維護人員更快進入狀況。</p>
+</blockquote>
+<h3 id="Commit-Message-規範組成"><a href="#Commit-Message-規範組成" class="headerlink" title="Commit Message 規範組成"></a>Commit Message 規範組成</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header:&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>type：代表 commit 的類別：feat、fix、docs、style,、refactor、test、chore，    <font color=#FF0000><strong>必要</strong></font>欄位。</li>
+<li>scope：代表 commit 影響的範圍，例如資料庫、控制層、模板層等等，視專案不同而不同，為<font color=#FF0000><strong>可選</strong></font>欄位。</li>
+<li>subject：代表此 commit 的簡短描述，不要超過 50 個字元，結尾不要加句號，為<font color=#FF0000><strong>必要</strong></font>欄位。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body: 對本次 Commit 的詳細描述，說明程式碼變動的項目與原因，還有與先前行為的對比，可分成多行，每一行不要超過 72 個字元。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">footer:填寫任務編號(如果有的話) &#x2F; BREAKING CHANGE (中斷性變更)(可忽略)。</span><br></pre></td></tr></table></figure>
+
+<h3 id="type-只允許使用以下類別"><a href="#type-只允許使用以下類別" class="headerlink" title="type 只允許使用以下類別"></a>type 只允許使用以下類別</h3><ul>
+<li>feat: 新增/修改功能 (feature)。</li>
+<li>fix: 修補 bug (bug fix)。</li>
+<li>docs: 文件 (documentation)。</li>
+<li>style: 格式 (不影響程式碼運行的變動 white-space, formatting, missing semi colons, etc)。</li>
+<li>refactor: 重構 (既不是新增功能，也不是修補 bug 的程式碼變動)。</li>
+<li>perf: 改善效能 (A code change that improves performance)。</li>
+<li>test: 增加測試 (when adding missing tests)。</li>
+<li>chore: 建構程序或輔助工具的變動 (maintain)。</li>
+<li>revert: 撤銷回覆先前的 commit 例如：revert: type(scope): subject (回覆版本：xxxx)。</li>
+</ul>
+<blockquote>
+<p>Type 是用來告訴進行 Code Review 的人應該以什麼態度來檢視 Commit 內容。</p>
+</blockquote>
+<h3 id="Commit-訊息範例"><a href="#Commit-訊息範例" class="headerlink" title="Commit 訊息範例"></a>Commit 訊息範例</h3><ul>
+<li><p>only header </p>
+<p><code>1. fix: 自訂表單新增/編輯頁面，修正離開頁面提醒邏輯</code></p>
+<p><code>2. feat: message 信件通知功能</code></p>
+<p><code>3. chore: 更新 testing 環境</code></p>
+<p><code>4. feat: message 信件通知功能</code></p>
+</li>
+<li><p>header+body+footer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">feat: message 信件通知功能</span><br><span class="line"></span><br><span class="line">因應新需求做調整：</span><br><span class="line">通知和 message 都要寄發每日信件，</span><br><span class="line">通知和 message 都用放在同一封信裡面就好，</span><br><span class="line">不然信件太多可能也不會有人想去看。</span><br><span class="line"></span><br><span class="line">調整項目：</span><br><span class="line">1. mail_template.php，新增 message 區塊。</span><br><span class="line">2. Send_today_notify_mail.php，新增 取得每日 Message 邏輯。</span><br><span class="line">3. Message_model_api.php，新增 $where 參數，以便取得每日訊息。</span><br><span class="line">4. Message_api.php、Message_group_user_model_api.php，新增 取得訊息使用者邏輯，以便撈取每日訊息。</span><br><span class="line"></span><br><span class="line">issue #863</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/29/%E3%80%8C%E5%82%B3%E5%80%BC%E3%80%8D%E6%88%96%E3%80%8C%E5%82%B3%E5%9D%80%E3%80%8D%EF%BC%9F/" rel="prev" title="「傳值」或「傳址」？">
+      <i class="fa fa-chevron-left"></i> 「傳值」或「傳址」？
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -240,6 +332,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-Message-%E8%A6%8F%E7%AF%84%E7%B5%84%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">Commit Message 規範組成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type-%E5%8F%AA%E5%85%81%E8%A8%B1%E4%BD%BF%E7%94%A8%E4%BB%A5%E4%B8%8B%E9%A1%9E%E5%88%A5"><span class="nav-number">2.</span> <span class="nav-text">type 只允許使用以下類別</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commit-%E8%A8%8A%E6%81%AF%E7%AF%84%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">Commit 訊息範例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -359,9 +452,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "http://example.com/about/index.html";
-    this.page.identifier = "about/index.html";
-    this.page.title = "about";
+    this.page.url = "http://example.com/2021/04/29/%E8%A6%8F%E7%AF%84/";
+    this.page.identifier = "2021/04/29/規範/";
+    this.page.title = "Git commit 規範";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
