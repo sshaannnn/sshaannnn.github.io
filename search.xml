@@ -53,54 +53,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Angular筆記 - 組件傳值</title>
-    <url>/20210429/917901.html</url>
-    <content><![CDATA[<h2 id="父傳子"><a href="#父傳子" class="headerlink" title="父傳子"></a>父傳子</h2><ul>
-<li>傳資料</li>
-</ul>
-<p>父元件需要先宣告要傳到子元件的變數，</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">title = <span class="string">&quot;父元件來的&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>接著透過html來傳送給子元件，</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child [data]=<span class="string">&quot;title&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>Input</code> 宣告要接收父元件的變數</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Input() data: string;</span><br></pre></td></tr></table></figure>
-
-<p>最後在子元件中使用 <code>data</code> 即可。</p>
-<ul>
-<li>傳事件</li>
-</ul>
-<p>父元件需要先宣告要傳到子元件的事件，</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">sendFromDad(): <span class="keyword">void</span> &#123;</span><br><span class="line">    alert(<span class="string">&#x27;這是父元件來的方法&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接著透過html來傳送給子元件，</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child [functionn]=<span class="string">&quot;sendFromDad()&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>Input</code> 宣告要接收父元件的變數</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Input() functionn: any;</span><br></pre></td></tr></table></figure>
-
-<p>最後在子元件中使用 <code>this.functionn()</code> 即可。</p>
-<h2 id="子傳父"><a href="#子傳父" class="headerlink" title="子傳父"></a>子傳父</h2><p>需要先在子元件使用 <code>Output</code> 宣告要傳送到父元件的變數，及利用 <code>EventEmitter</code> 輸出屬性</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Output() childToDad: EventEmitter&lt;any&gt; = <span class="keyword">new</span> EventEmitter();</span><br></pre></td></tr></table></figure>
-
-<p>觸發事件後，會將事件內容傳送出去</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">send($event): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.childToDad.emit(<span class="string">&quot;從子元件來的&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接著透過html來傳送給子元件</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child (childToDad)=<span class="string">&quot;dadGet($event)&quot;</span><span class="string">&quot;&gt;&lt;/app-child&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>父元件接到後即可執行。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">dadGet(msg: string): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Angular</category>
-      </categories>
-      <tags>
-        <tag>Frontend</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git commit 規範</title>
     <url>/20210422/297699.html</url>
     <content><![CDATA[<blockquote>
@@ -147,6 +99,54 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Angular筆記 - 組件傳值</title>
+    <url>/20210429/917901.html</url>
+    <content><![CDATA[<h2 id="父傳子"><a href="#父傳子" class="headerlink" title="父傳子"></a>父傳子</h2><ul>
+<li>傳資料</li>
+</ul>
+<p>父元件需要先宣告要傳到子元件的變數，</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">title = <span class="string">&quot;父元件來的&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>接著透過html來傳送給子元件，</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child [data]=<span class="string">&quot;title&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>Input</code> 宣告要接收父元件的變數</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Input() data: string;</span><br></pre></td></tr></table></figure>
+
+<p>最後在子元件中使用 <code>data</code> 即可。</p>
+<ul>
+<li>傳事件</li>
+</ul>
+<p>父元件需要先宣告要傳到子元件的事件，</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">sendFromDad(): <span class="keyword">void</span> &#123;</span><br><span class="line">    alert(<span class="string">&#x27;這是父元件來的方法&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接著透過html來傳送給子元件，</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child [functionn]=<span class="string">&quot;sendFromDad()&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>Input</code> 宣告要接收父元件的變數</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Input() functionn: any;</span><br></pre></td></tr></table></figure>
+
+<p>最後在子元件中使用 <code>this.functionn()</code> 即可。</p>
+<h2 id="子傳父"><a href="#子傳父" class="headerlink" title="子傳父"></a>子傳父</h2><p>需要先在子元件使用 <code>Output</code> 宣告要傳送到父元件的變數，及利用 <code>EventEmitter</code> 輸出屬性</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Output() childToDad: EventEmitter&lt;any&gt; = <span class="keyword">new</span> EventEmitter();</span><br></pre></td></tr></table></figure>
+
+<p>觸發事件後，會將事件內容傳送出去</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">send($event): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.childToDad.emit(<span class="string">&quot;從子元件來的&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接著透過html來傳送給子元件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child (childToDad)=<span class="string">&quot;dadGet($event)&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
+
+<p>父元件接到後即可執行。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">dadGet(msg: string): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Angular</category>
+      </categories>
+      <tags>
+        <tag>Frontend</tag>
       </tags>
   </entry>
 </search>
