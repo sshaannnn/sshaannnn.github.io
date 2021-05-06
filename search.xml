@@ -54,30 +54,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Angular筆記 - 更改 Title 及 Icon</title>
-    <url>/20210505/013829.html</url>
-    <content><![CDATA[<p>1.更改 Title</p>
-<h4 id="第一步：在-app-module-ts-注入-title-服務"><a href="#第一步：在-app-module-ts-注入-title-服務" class="headerlink" title="第一步：在 app.module.ts 注入 title 服務"></a>第一步：在 app.module.ts 注入 title 服務</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserModule, Title &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppRoutingModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./app-routing.module&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">&#x27;./app.component&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HomeModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./home/home.module&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule,</span><br><span class="line">    HomeModule,</span><br><span class="line">  ],</span><br><span class="line">  providers: [Title],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第二步：在要更改的-Component-中的-constructor-注入與寫上功能"><a href="#第二步：在要更改的-Component-中的-constructor-注入與寫上功能" class="headerlink" title="第二步：在要更改的 Component 中的 constructor 注入與寫上功能"></a>第二步：在要更改的 Component 中的 constructor 注入與寫上功能</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Title &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">&#x27;app-home&#x27;</span>,</span><br><span class="line">  templateUrl: <span class="string">&#x27;./home.component.html&#x27;</span>,</span><br><span class="line">  styleUrls: [<span class="string">&#x27;./home.component.sass&#x27;</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  <span class="title">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    private titleService: Title</span>) &#123;</span><br><span class="line">    <span class="built_in">this</span>.titleService.setTitle(<span class="string">&#x27;This is my title&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>更改 Title 完成。</p>
-<p>2.更改網頁 Icon</p>
-<h4 id="第一步：將欲使用的-ico-檔放置於-assets-資料夾"><a href="#第一步：將欲使用的-ico-檔放置於-assets-資料夾" class="headerlink" title="第一步：將欲使用的 ico 檔放置於 assets 資料夾"></a>第一步：將欲使用的 ico 檔放置於 assets 資料夾</h4><p>ng serve 啟動後，輸入 <a href="http://localhost:4200/assets/xxxx.ico">http://localhost:4200/assets/xxxx.ico</a> 可確認圖片是否顯示。<br>※Angular預設 port 是4200，網址會依您服務設定的 port 而有所不同。</p>
-<h4 id="第二步：將-icon-的連結改為-“assets-xxxx-ico”"><a href="#第二步：將-icon-的連結改為-“assets-xxxx-ico”" class="headerlink" title="第二步：將 icon 的連結改為 “assets/xxxx.ico”"></a>第二步：將 icon 的連結改為 “assets/xxxx.ico”</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">  &lt;title&gt;Portfolio&lt;/title&gt;</span><br><span class="line">  &lt;base href=<span class="string">&quot;/&quot;</span>&gt;</span><br><span class="line">  &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span><br><span class="line">  &lt;link rel=<span class="string">&quot;icon&quot;</span> type=<span class="string">&quot;image/x-icon&quot;</span> href=<span class="string">&quot;assets/sshaannnn.ico&quot;</span>&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-
-<p>更改更改網頁 Icon 完成。</p>
-<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a href="https://angular.io/guide/set-document-title">Angular官方文件/動態調整Title</a></em></p>
-]]></content>
-      <categories>
-        <category>Angular</category>
-      </categories>
-      <tags>
-        <tag>Frontend</tag>
-        <tag>Angular</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Angular筆記 - 組件傳值</title>
     <url>/20210429/917901.html</url>
     <content><![CDATA[<h2 id="父傳子"><a href="#父傳子" class="headerlink" title="父傳子"></a>父傳子</h2><ul>
@@ -117,6 +93,30 @@
 
 <p>父元件接到後即可執行。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">dadGet(msg: string): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Angular</category>
+      </categories>
+      <tags>
+        <tag>Frontend</tag>
+        <tag>Angular</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Angular筆記 - 更改 Title 及 Icon</title>
+    <url>/20210505/013829.html</url>
+    <content><![CDATA[<p>1.更改 Title</p>
+<h4 id="第一步：在-app-module-ts-注入-title-服務"><a href="#第一步：在-app-module-ts-注入-title-服務" class="headerlink" title="第一步：在 app.module.ts 注入 title 服務"></a>第一步：在 app.module.ts 注入 title 服務</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserModule, Title &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppRoutingModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./app-routing.module&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">&#x27;./app.component&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HomeModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./home/home.module&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule,</span><br><span class="line">    HomeModule,</span><br><span class="line">  ],</span><br><span class="line">  providers: [Title],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第二步：在要更改的-Component-中的-constructor-注入與寫上功能"><a href="#第二步：在要更改的-Component-中的-constructor-注入與寫上功能" class="headerlink" title="第二步：在要更改的 Component 中的 constructor 注入與寫上功能"></a>第二步：在要更改的 Component 中的 constructor 注入與寫上功能</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Title &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">&#x27;app-home&#x27;</span>,</span><br><span class="line">  templateUrl: <span class="string">&#x27;./home.component.html&#x27;</span>,</span><br><span class="line">  styleUrls: [<span class="string">&#x27;./home.component.sass&#x27;</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  <span class="title">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    private titleService: Title</span>) &#123;</span><br><span class="line">    <span class="built_in">this</span>.titleService.setTitle(<span class="string">&#x27;This is my title&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更改 Title 完成。</p>
+<p>2.更改網頁 Icon</p>
+<h4 id="第一步：將欲使用的-ico-檔放置於-assets-資料夾"><a href="#第一步：將欲使用的-ico-檔放置於-assets-資料夾" class="headerlink" title="第一步：將欲使用的 ico 檔放置於 assets 資料夾"></a>第一步：將欲使用的 ico 檔放置於 assets 資料夾</h4><p>ng serve 啟動後，輸入 <a href="http://localhost:4200/assets/xxxx.ico">http://localhost:4200/assets/xxxx.ico</a> 可確認圖片是否顯示。<br>※Angular預設 port 是4200，網址會依您服務設定的 port 而有所不同。</p>
+<h4 id="第二步：將-icon-的連結改為-“assets-xxxx-ico”"><a href="#第二步：將-icon-的連結改為-“assets-xxxx-ico”" class="headerlink" title="第二步：將 icon 的連結改為 “assets/xxxx.ico”"></a>第二步：將 icon 的連結改為 “assets/xxxx.ico”</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">  &lt;title&gt;Portfolio&lt;/title&gt;</span><br><span class="line">  &lt;base href=<span class="string">&quot;/&quot;</span>&gt;</span><br><span class="line">  &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span><br><span class="line">  &lt;link rel=<span class="string">&quot;icon&quot;</span> type=<span class="string">&quot;image/x-icon&quot;</span> href=<span class="string">&quot;assets/sshaannnn.ico&quot;</span>&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+
+<p>更改更改網頁 Icon 完成。</p>
+<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a href="https://angular.io/guide/set-document-title">Angular官方文件/動態調整Title</a></em></p>
 ]]></content>
       <categories>
         <category>Angular</category>
