@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>JS筆記 - 「傳值」或「傳址」</title>
+    <title>JS - 「傳值」或「傳址」</title>
     <url>/20210420/490932.html</url>
     <content><![CDATA[<h2 id="基本型別"><a href="#基本型別" class="headerlink" title="基本型別"></a>基本型別</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
@@ -54,7 +54,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Angular筆記 - 更改 Title 及 Icon</title>
+    <title>Angular - 更改 Title 及 Icon</title>
     <url>/20210505/013829.html</url>
     <content><![CDATA[<p>1.更改 Title</p>
 <h4 id="第一步：在-app-module-ts-注入-title-服務"><a href="#第一步：在-app-module-ts-注入-title-服務" class="headerlink" title="第一步：在 app.module.ts 注入 title 服務"></a>第一步：在 app.module.ts 注入 title 服務</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserModule, Title &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppRoutingModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./app-routing.module&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">&#x27;./app.component&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HomeModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./home/home.module&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule,</span><br><span class="line">    HomeModule,</span><br><span class="line">  ],</span><br><span class="line">  providers: [Title],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
@@ -78,7 +78,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Angular筆記 - 組件傳值</title>
+    <title>Angular - 組件傳值</title>
     <url>/20210429/917901.html</url>
     <content><![CDATA[<h2 id="父傳子"><a href="#父傳子" class="headerlink" title="父傳子"></a>父傳子</h2><ul>
 <li>傳資料</li>
