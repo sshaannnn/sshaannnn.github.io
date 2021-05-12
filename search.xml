@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>21 天 Bootstrap 5 新手實戰營 - Week 1</title>
+    <url>/20210512/05831.html</url>
+    <content><![CDATA[<h3 id="Bootstrap-是什麼？"><a href="#Bootstrap-是什麼？" class="headerlink" title="Bootstrap 是什麼？"></a>Bootstrap 是什麼？</h3><p>由HTML、CSS 和JavaScript 寫好的前端框架，需要時只要載入已經寫好的程式碼來使用即可。</p>
+<h3 id="如何使用-Bootstrap？"><a href="#如何使用-Bootstrap？" class="headerlink" title="如何使用 Bootstrap？"></a>如何使用 Bootstrap？</h3><p>官方提供兩種載入方式：</p>
+<ol>
+<li>嵌入CDN</li>
+</ol>
+<blockquote>
+<p>利用網路連上與現在位置最近的伺服器。</p>
+</blockquote>
+<ul>
+<li>優：載入速度快、省流量。</li>
+<li>缺：人品差的話 CDN 掛掉自己的網站也會跟著掛。</li>
+</ul>
+<ol start="2">
+<li>下載在本地端使用</li>
+</ol>
+<blockquote>
+<p>顧名思義將其他人提供的程式碼下載下來在自己的電腦使用。</p>
+</blockquote>
+<ul>
+<li>優：可修改程式碼做客製化來使用。</li>
+<li>缺：如果程式碼很大一包的話載入會載很久。</li>
+</ul>
+<img src="https://i.imgur.com/uLtNFp1.png" width="50%" height="50%" />
+
+<p>上圖為使用 CDN 方式，<code>chrome</code>可視為自己的伺服器，如果要連上六角學院的官網，需要先輸入網址進入，進入後會把首頁的 html 抓下來在自己的瀏覽器解析才可以看到網頁，如果解析到一半，瀏覽器發現 html 有外部伺服器的網址，便會連到最近的伺服器取得需要的東西。</p>
+<img src="https://i.imgur.com/tL6DsFX.png" width="50%" height="50%" />
+
+<p>如果把 bootstrap 下載在本地端使用的話，如上圖，就會變成自己的伺服器來回取得所需的東西，也會造成自己伺服器的流量過大。</p>
+<p>所以到底要如何使用 bootstrap？</p>
+<ul>
+<li>使用CDN：進入官網的 <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">Introduction</a></li>
+</ul>
+<img src="https://i.imgur.com/c9ZrV7d.png" width="80%" height="50%" />
+<img src="https://i.imgur.com/a4OFWSi.png" width="80%" height="50%" />
+
+<p>依照內容將<code>CSS</code>貼上至 <code>&lt;head&gt; &lt;/head&gt;</code>間，以及將<code>JS</code>貼在<code>&lt;body&gt;</code>的結尾處。</p>
+<ul>
+<li>下載在本地端：進入官網的 <a href="https://getbootstrap.com/docs/5.0/getting-started/download/">Download</a></li>
+</ul>
+<img src="https://i.imgur.com/s82LhrT.png" width="80%" height="50%" />
+
+<p>點選<code>Download</code>即可下載下來。</p>
+<img src="https://i.imgur.com/qArLxhp.png" width="40%" height="40%" />
+
+<p>解壓縮後可以看到裡面有 CSS 跟 JS 的檔案夾，從CDN的網址可以看到，我們需要的檔案只有<strong>CSS裡的bootstrap.min.css</strong> 以及 <strong>JS裡的bootstrap.bundle.min.js</strong>。</p>
+<h3 id="如何確認是否有成功使用-Bootstrap？"><a href="#如何確認是否有成功使用-Bootstrap？" class="headerlink" title="如何確認是否有成功使用 Bootstrap？"></a>如何確認是否有成功使用 Bootstrap？</h3><p>以下以使用CDN為例：</p>
+<ol>
+<li>打開檢查至 Network 查看是否有<code>bootstrap.min.css</code>及<code>bootstrap.bundle.min.js</code>的檔案。</li>
+</ol>
+<img src="https://i.imgur.com/zFeevoc.png" width="40%" height="40%" />
+
+<ol start="2">
+<li>如果有錯誤的話 e.g.網址打錯，Console 會報錯，顯示找不到此檔案。右上角也會顯示錯誤的程式碼在哪個檔案以及哪一行。</li>
+</ol>
+<img src="https://i.imgur.com/8etiUoU.png" width="40%" height="40%" />
+]]></content>
+      <categories>
+        <category>Bootstrap 5</category>
+      </categories>
+      <tags>
+        <tag>Bootstrap 5</tag>
+        <tag>HexSchool</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS - 「傳值」或「傳址」</title>
     <url>/20210420/490932.html</url>
     <content><![CDATA[<h2 id="基本型別"><a href="#基本型別" class="headerlink" title="基本型別"></a>基本型別</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
@@ -116,55 +183,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Angular - 組件傳值</title>
-    <url>/20210429/917901.html</url>
-    <content><![CDATA[<h2 id="父傳子"><a href="#父傳子" class="headerlink" title="父傳子"></a>父傳子</h2><ul>
-<li>傳資料</li>
-</ul>
-<p>父元件需要先宣告要傳到子元件的變數，</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">title = <span class="string">&quot;父元件來的&quot;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>接著透過html來傳送給子元件，</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child [data]=<span class="string">&quot;title&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>Input</code> 宣告要接收父元件的變數</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Input() data: string;</span><br></pre></td></tr></table></figure>
-
-<p>最後在子元件中使用 <code>data</code> 即可。</p>
-<ul>
-<li>傳事件</li>
-</ul>
-<p>父元件需要先宣告要傳到子元件的事件，</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">sendFromDad(): <span class="keyword">void</span> &#123;</span><br><span class="line">    alert(<span class="string">&#x27;這是父元件來的方法&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接著透過html來傳送給子元件，</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child [functionn]=<span class="string">&quot;sendFromDad()&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>Input</code> 宣告要接收父元件的變數</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Input() functionn: any;</span><br></pre></td></tr></table></figure>
-
-<p>最後在子元件中使用 <code>this.functionn()</code> 即可。</p>
-<h2 id="子傳父"><a href="#子傳父" class="headerlink" title="子傳父"></a>子傳父</h2><p>需要先在子元件使用 <code>Output</code> 宣告要傳送到父元件的變數，及利用 <code>EventEmitter</code> 輸出屬性</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Output() childToDad: EventEmitter&lt;any&gt; = <span class="keyword">new</span> EventEmitter();</span><br></pre></td></tr></table></figure>
-
-<p>觸發事件後，會將事件內容傳送出去</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">send($event): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.childToDad.emit(<span class="string">&quot;從子元件來的&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接著透過html來傳送給子元件</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child (childToDad)=<span class="string">&quot;dadGet($event)&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
-
-<p>父元件接到後即可執行。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">dadGet(msg: string): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Angular</category>
-      </categories>
-      <tags>
-        <tag>Frontend</tag>
-        <tag>Angular</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git commit 規範</title>
     <url>/20210422/297699.html</url>
     <content><![CDATA[<blockquote>
@@ -211,6 +229,55 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Angular - 組件傳值</title>
+    <url>/20210429/917901.html</url>
+    <content><![CDATA[<h2 id="父傳子"><a href="#父傳子" class="headerlink" title="父傳子"></a>父傳子</h2><ul>
+<li>傳資料</li>
+</ul>
+<p>父元件需要先宣告要傳到子元件的變數，</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">title = <span class="string">&quot;父元件來的&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>接著透過html來傳送給子元件，</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child [data]=<span class="string">&quot;title&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>Input</code> 宣告要接收父元件的變數</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Input() data: string;</span><br></pre></td></tr></table></figure>
+
+<p>最後在子元件中使用 <code>data</code> 即可。</p>
+<ul>
+<li>傳事件</li>
+</ul>
+<p>父元件需要先宣告要傳到子元件的事件，</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">sendFromDad(): <span class="keyword">void</span> &#123;</span><br><span class="line">    alert(<span class="string">&#x27;這是父元件來的方法&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接著透過html來傳送給子元件，</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child [functionn]=<span class="string">&quot;sendFromDad()&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>Input</code> 宣告要接收父元件的變數</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Input() functionn: any;</span><br></pre></td></tr></table></figure>
+
+<p>最後在子元件中使用 <code>this.functionn()</code> 即可。</p>
+<h2 id="子傳父"><a href="#子傳父" class="headerlink" title="子傳父"></a>子傳父</h2><p>需要先在子元件使用 <code>Output</code> 宣告要傳送到父元件的變數，及利用 <code>EventEmitter</code> 輸出屬性</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">@Output() childToDad: EventEmitter&lt;any&gt; = <span class="keyword">new</span> EventEmitter();</span><br></pre></td></tr></table></figure>
+
+<p>觸發事件後，會將事件內容傳送出去</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">send($event): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.childToDad.emit(<span class="string">&quot;從子元件來的&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接著透過html來傳送給子元件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;app-child (childToDad)=<span class="string">&quot;dadGet($event)&quot;</span>&gt;&lt;/app-child&gt;</span><br></pre></td></tr></table></figure>
+
+<p>父元件接到後即可執行。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">dadGet(msg: string): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Angular</category>
+      </categories>
+      <tags>
+        <tag>Frontend</tag>
+        <tag>Angular</tag>
       </tags>
   </entry>
 </search>
