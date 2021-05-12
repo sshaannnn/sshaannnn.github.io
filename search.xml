@@ -58,6 +58,21 @@
 <li>如果有錯誤的話 e.g.網址打錯，Console 會報錯，顯示找不到此檔案。右上角也會顯示錯誤的程式碼在哪個檔案以及哪一行。</li>
 </ol>
 <img src="https://i.imgur.com/8etiUoU.png" width="50%" height="50%" />
+
+<h3 id="CSS-重置與-Bootstrap-重置"><a href="#CSS-重置與-Bootstrap-重置" class="headerlink" title="CSS 重置與 Bootstrap 重置"></a>CSS 重置與 Bootstrap 重置</h3><p>Q：為什麼需要 CSS Reset？<br>A：CSS本身就有預設值，而這些預設值時常在排版的時候帶來很大的不便，尤其各家的瀏覽器又有各自的預設值，使開發者需要花一些時間成本去針對各瀏覽器的CSS去做調整。</p>
+<p>CSS 重置總共有兩種，分別為：</p>
+<ul>
+<li><p>CSS Reset：CSS Reset 也有幾套常見的版本，我最常使用的是 <a href="https://meyerweb.com/eric/tools/css/reset/">Eric Meyer 的版本</a>。</p>
+</li>
+<li><p><a href="https://necolas.github.io/normalize.css/">CSS Normalize</a></p>
+</li>
+</ul>
+<p>兩者的差異是 CSS Normalize 保留原本預設 HTML 標籤的樣式，僅針對不同瀏覽器與各版本間不相容的標籤進行些微調整，而 CSS Reset 則是把所有瀏覽器最不一致的地方強制歸 0，相對比較沒有彈性。</p>
+<p>但兩者都有人使用，可以針對需求擇一使用即可。</p>
+<p>而 <a href="https://bootstrap5.hexschool.com/docs/5.0/content/reboot/">Bootstrap 重置</a>也是如此，舉例來說 Bootstrap 會把預設的字型替換成自己的字型結構。</p>
+<img src="https://i.imgur.com/mEL7jfn.png" width="50%" height="50%" />
+
+<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a href="https://blog.yyisyou.tw/58be4690/">Reset CSS與Normalize CSS介紹</a></em></p>
 ]]></content>
       <categories>
         <category>Bootstrap 5</category>
