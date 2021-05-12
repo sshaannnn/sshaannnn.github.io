@@ -36,8 +36,11 @@
 <meta property="og:image" content="https://i.imgur.com/zFeevoc.png">
 <meta property="og:image" content="https://i.imgur.com/8etiUoU.png">
 <meta property="og:image" content="https://i.imgur.com/mEL7jfn.png">
+<meta property="og:image" content="https://i.imgur.com/QGBJrit.png">
+<meta property="og:image" content="https://i.imgur.com/8XhZoj8.png">
+<meta property="og:image" content="https://i.imgur.com/E8sTbJE.png">
 <meta property="article:published_time" content="2021-05-12T01:44:33.000Z">
-<meta property="article:modified_time" content="2021-05-12T04:47:53.464Z">
+<meta property="article:modified_time" content="2021-05-12T05:11:54.681Z">
 <meta property="article:author" content="SHAN WU">
 <meta property="article:tag" content="Frontend">
 <meta property="article:tag" content="Bootstrap 5">
@@ -197,7 +200,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-05-12 09:44:33 / 修改時間：12:47:53" itemprop="dateCreated datePublished" datetime="2021-05-12T09:44:33+08:00">2021-05-12</time>
+              <time title="創建時間：2021-05-12 09:44:33 / 修改時間：13:11:54" itemprop="dateCreated datePublished" datetime="2021-05-12T09:44:33+08:00">2021-05-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +238,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="Bootstrap-是什麼？"><a href="#Bootstrap-是什麼？" class="headerlink" title="Bootstrap 是什麼？"></a>Bootstrap 是什麼？</h3><p>由HTML、CSS 和JavaScript 寫好的前端框架，需要時只要載入已經寫好的程式碼來使用即可。</p>
+        <h3 id="Bootstrap-是什麼？"><a href="#Bootstrap-是什麼？" class="headerlink" title="Bootstrap 是什麼？"></a>Bootstrap 是什麼？</h3><p>由 HTML、CSS 和 JavaScript 寫好的前端框架，需要時只要載入已經寫好的程式碼來使用即可。</p>
 <h3 id="如何使用-Bootstrap？"><a href="#如何使用-Bootstrap？" class="headerlink" title="如何使用 Bootstrap？"></a>如何使用 Bootstrap？</h3><p>官方提供兩種載入方式：</p>
 <ol>
 <li>嵌入CDN</li>
@@ -301,8 +304,18 @@
 </ul>
 <p>兩者的差異是 CSS Normalize 保留原本預設 HTML 標籤的樣式，僅針對不同瀏覽器與各版本間不相容的標籤進行些微調整，而 CSS Reset 則是把所有瀏覽器最不一致的地方強制歸 0，相對比較沒有彈性。</p>
 <p>但兩者都有人使用，可以針對需求擇一使用即可。</p>
-<p>而 <a target="_blank" rel="noopener" href="https://bootstrap5.hexschool.com/docs/5.0/content/reboot/">Bootstrap 重置</a>也是如此，舉例來說 Bootstrap 會把預設的字型替換成自己的字型結構。</p>
+<p><a target="_blank" rel="noopener" href="https://bootstrap5.hexschool.com/docs/5.0/content/reboot/">Bootstrap 重置</a>也是如此，舉例來說 Bootstrap 會把預設的字型替換成自己的字型結構。</p>
 <img src="https://i.imgur.com/mEL7jfn.png" width="50%" height="50%" />
+
+<h3 id="CSS-按鈕小技巧"><a href="#CSS-按鈕小技巧" class="headerlink" title="CSS 按鈕小技巧"></a>CSS 按鈕小技巧</h3><p>情境1：老闆今天的需求是一顆黑底 btn，交出去後他又突然要加一顆黃色的，黃色做完又要一顆灰色的，於是我將 CSS 複製貼上改了背景顏色生出了三顆 btn。</p>
+<img src="https://i.imgur.com/QGBJrit.png" width="40%" height="40%" />
+
+<p>如果老闆之後又要繼續加不同顏色的 btn，那是不是要繼續複製一堆很籠的程式碼？</p>
+<p>這時候就可以使用 <strong>CSS 累加</strong>的方式，寫一行只有背景顏色的程式碼，並加在原本的 CSS 後方。</p>
+<img src="https://i.imgur.com/8XhZoj8.png" width="40%" height="40%" />
+
+<p>依照 CSS權重，後面的 CSS 樣式會覆蓋掉前面的樣式，如下圖，一開始黑色 btn 的背景顏色就會被槓掉，換成第二個 CSS 的黃色，其餘一模一樣。</p>
+<img src="https://i.imgur.com/E8sTbJE.png" width="40%" height="40%" />
 
 <h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a target="_blank" rel="noopener" href="https://blog.yyisyou.tw/58be4690/">Reset CSS與Normalize CSS介紹</a></em></p>
 
@@ -397,7 +410,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">Bootstrap 是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Bootstrap%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">如何使用 Bootstrap？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%A2%BA%E8%AA%8D%E6%98%AF%E5%90%A6%E6%9C%89%E6%88%90%E5%8A%9F%E4%BD%BF%E7%94%A8-Bootstrap%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">如何確認是否有成功使用 Bootstrap？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-%E9%87%8D%E7%BD%AE%E8%88%87-Bootstrap-%E9%87%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">CSS 重置與 Bootstrap 重置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">參考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">Bootstrap 是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Bootstrap%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">如何使用 Bootstrap？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%A2%BA%E8%AA%8D%E6%98%AF%E5%90%A6%E6%9C%89%E6%88%90%E5%8A%9F%E4%BD%BF%E7%94%A8-Bootstrap%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">如何確認是否有成功使用 Bootstrap？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-%E9%87%8D%E7%BD%AE%E8%88%87-Bootstrap-%E9%87%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">CSS 重置與 Bootstrap 重置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-%E6%8C%89%E9%88%95%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-number">5.</span> <span class="nav-text">CSS 按鈕小技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">參考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
