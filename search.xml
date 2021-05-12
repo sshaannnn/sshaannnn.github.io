@@ -183,55 +183,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git commit 規範</title>
-    <url>/20210422/297699.html</url>
-    <content><![CDATA[<blockquote>
-<p>Commit Message 最好兼俱 Why 及 What，讓日後進行維護人員更快進入狀況。</p>
-</blockquote>
-<h3 id="Commit-Message-規範組成"><a href="#Commit-Message-規範組成" class="headerlink" title="Commit Message 規範組成"></a>Commit Message 規範組成</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">header:<span class="tag">&lt;<span class="name">type</span>&gt;</span>(<span class="tag">&lt;<span class="name">scope</span>&gt;</span>): <span class="tag">&lt;<span class="name">subject</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>type：代表 commit 的類別：feat、fix、docs、style,、refactor、test、chore，<strong>必要</strong></font>欄位。</li>
-<li>scope：代表 commit 影響的範圍，例如資料庫、控制層、模板層等等，視專案不同而不同，為<strong>可選</strong></font>欄位。</li>
-<li>subject：代表此 commit 的簡短描述，不要超過 50 個字元，結尾不要加句號，為<strong>必要</strong></font>欄位。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">body: 對本次 Commit 的詳細描述，說明程式碼變動的項目與原因，還有與先前行為的對比，可分成多行，每一行不要超過 72 個字元。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">footer:填寫任務編號(如果有的話) / BREAKING CHANGE (中斷性變更)(可忽略)。</span><br></pre></td></tr></table></figure>
-
-<h3 id="type-只允許使用以下類別"><a href="#type-只允許使用以下類別" class="headerlink" title="type 只允許使用以下類別"></a>type 只允許使用以下類別</h3><ul>
-<li>feat: 新增/修改功能 (feature)。</li>
-<li>fix: 修補 bug (bug fix)。</li>
-<li>docs: 文件 (documentation)。</li>
-<li>style: 格式 (不影響程式碼運行的變動 white-space, formatting, missing semi colons, etc)。</li>
-<li>refactor: 重構 (既不是新增功能，也不是修補 bug 的程式碼變動)。</li>
-<li>perf: 改善效能 (A code change that improves performance)。</li>
-<li>test: 增加測試 (when adding missing tests)。</li>
-<li>chore: 建構程序或輔助工具的變動 (maintain)。</li>
-<li>revert: 撤銷回覆先前的 commit 例如：revert: type(scope): subject (回覆版本：xxxx)。</li>
-</ul>
-<blockquote>
-<p>Type 是用來告訴進行 Code Review 的人應該以什麼態度來檢視 Commit 內容。</p>
-</blockquote>
-<h3 id="Commit-訊息範例"><a href="#Commit-訊息範例" class="headerlink" title="Commit 訊息範例"></a>Commit 訊息範例</h3><ul>
-<li><p>only header</p>
-<p><code>1. fix: 自訂表單新增/編輯頁面，修正離開頁面提醒邏輯</code><br><code>2. feat: message 信件通知功能</code><br><code>3. chore: 更新 testing 環境</code><br><code>4. feat: message 信件通知功能</code></p>
-</li>
-<li><p>header+body+footer</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">feat: message 信件通知功能</span><br><span class="line"></span><br><span class="line">因應新需求做調整：</span><br><span class="line">通知和 message 都要寄發每日信件，</span><br><span class="line">通知和 message 都用放在同一封信裡面就好，</span><br><span class="line">不然信件太多可能也不會有人想去看。</span><br><span class="line"></span><br><span class="line">調整項目：</span><br><span class="line">1. mail_template.php，新增 message 區塊。</span><br><span class="line">2. Send_today_notify_mail.php，新增 取得每日 Message 邏輯。</span><br><span class="line">3. Message_model_api.php，新增 $where 參數，以便取得每日訊息。</span><br><span class="line">4. Message_api.php、Message_group_user_model_api.php，新增 取得訊息使用者邏輯，以便撈取每日訊息。</span><br><span class="line"></span><br><span class="line">issue #863</span><br></pre></td></tr></table></figure>
-
-<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a href="https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html">Git Commit Message 這樣寫會更好，替專案引入規範與範例</a></em></p>
-]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Angular - 組件傳值</title>
     <url>/20210429/917901.html</url>
     <content><![CDATA[<h2 id="父傳子"><a href="#父傳子" class="headerlink" title="父傳子"></a>父傳子</h2><ul>
@@ -278,6 +229,55 @@
       <tags>
         <tag>Frontend</tag>
         <tag>Angular</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git commit 規範</title>
+    <url>/20210422/297699.html</url>
+    <content><![CDATA[<blockquote>
+<p>Commit Message 最好兼俱 Why 及 What，讓日後進行維護人員更快進入狀況。</p>
+</blockquote>
+<h3 id="Commit-Message-規範組成"><a href="#Commit-Message-規範組成" class="headerlink" title="Commit Message 規範組成"></a>Commit Message 規範組成</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">header:<span class="tag">&lt;<span class="name">type</span>&gt;</span>(<span class="tag">&lt;<span class="name">scope</span>&gt;</span>): <span class="tag">&lt;<span class="name">subject</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>type：代表 commit 的類別：feat、fix、docs、style,、refactor、test、chore，<strong>必要</strong></font>欄位。</li>
+<li>scope：代表 commit 影響的範圍，例如資料庫、控制層、模板層等等，視專案不同而不同，為<strong>可選</strong></font>欄位。</li>
+<li>subject：代表此 commit 的簡短描述，不要超過 50 個字元，結尾不要加句號，為<strong>必要</strong></font>欄位。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">body: 對本次 Commit 的詳細描述，說明程式碼變動的項目與原因，還有與先前行為的對比，可分成多行，每一行不要超過 72 個字元。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">footer:填寫任務編號(如果有的話) / BREAKING CHANGE (中斷性變更)(可忽略)。</span><br></pre></td></tr></table></figure>
+
+<h3 id="type-只允許使用以下類別"><a href="#type-只允許使用以下類別" class="headerlink" title="type 只允許使用以下類別"></a>type 只允許使用以下類別</h3><ul>
+<li>feat: 新增/修改功能 (feature)。</li>
+<li>fix: 修補 bug (bug fix)。</li>
+<li>docs: 文件 (documentation)。</li>
+<li>style: 格式 (不影響程式碼運行的變動 white-space, formatting, missing semi colons, etc)。</li>
+<li>refactor: 重構 (既不是新增功能，也不是修補 bug 的程式碼變動)。</li>
+<li>perf: 改善效能 (A code change that improves performance)。</li>
+<li>test: 增加測試 (when adding missing tests)。</li>
+<li>chore: 建構程序或輔助工具的變動 (maintain)。</li>
+<li>revert: 撤銷回覆先前的 commit 例如：revert: type(scope): subject (回覆版本：xxxx)。</li>
+</ul>
+<blockquote>
+<p>Type 是用來告訴進行 Code Review 的人應該以什麼態度來檢視 Commit 內容。</p>
+</blockquote>
+<h3 id="Commit-訊息範例"><a href="#Commit-訊息範例" class="headerlink" title="Commit 訊息範例"></a>Commit 訊息範例</h3><ul>
+<li><p>only header</p>
+<p><code>1. fix: 自訂表單新增/編輯頁面，修正離開頁面提醒邏輯</code><br><code>2. feat: message 信件通知功能</code><br><code>3. chore: 更新 testing 環境</code><br><code>4. feat: message 信件通知功能</code></p>
+</li>
+<li><p>header+body+footer</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">feat: message 信件通知功能</span><br><span class="line"></span><br><span class="line">因應新需求做調整：</span><br><span class="line">通知和 message 都要寄發每日信件，</span><br><span class="line">通知和 message 都用放在同一封信裡面就好，</span><br><span class="line">不然信件太多可能也不會有人想去看。</span><br><span class="line"></span><br><span class="line">調整項目：</span><br><span class="line">1. mail_template.php，新增 message 區塊。</span><br><span class="line">2. Send_today_notify_mail.php，新增 取得每日 Message 邏輯。</span><br><span class="line">3. Message_model_api.php，新增 $where 參數，以便取得每日訊息。</span><br><span class="line">4. Message_api.php、Message_group_user_model_api.php，新增 取得訊息使用者邏輯，以便撈取每日訊息。</span><br><span class="line"></span><br><span class="line">issue #863</span><br></pre></td></tr></table></figure>
+
+<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a href="https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html">Git Commit Message 這樣寫會更好，替專案引入規範與範例</a></em></p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
 </search>
