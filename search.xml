@@ -57,7 +57,7 @@
 <ol start="2">
 <li>如果有錯誤的話 e.g.網址打錯，Console 會報錯，顯示找不到此檔案。右上角也會顯示錯誤的程式碼在哪個檔案以及哪一行。</li>
 </ol>
-<img src="https://i.imgur.com/8etiUoU.png" width="40%" height="40%" />
+<img src="https://i.imgur.com/8etiUoU.png" width="50%" height="50%" />
 ]]></content>
       <categories>
         <category>Bootstrap 5</category>
@@ -65,44 +65,6 @@
       <tags>
         <tag>Bootstrap 5</tag>
         <tag>HexSchool</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS - 「同步」與「非同步」</title>
-    <url>/20210511/91045.html</url>
-    <content><![CDATA[<h3 id="「單執行緒」與「多執行緒」"><a href="#「單執行緒」與「多執行緒」" class="headerlink" title="「單執行緒」與「多執行緒」"></a>「單執行緒」與「多執行緒」</h3><p>單執行緒指的是一次執行一個指令，不能同時執行多個指令。<br>反之多執行緒指的便是一次能夠執行多個指令。而 JavaScript 則是屬於一種單執行緒的程式語言。</p>
-<h3 id="同步-Synchrnous"><a href="#同步-Synchrnous" class="headerlink" title="同步 (Synchrnous)"></a>同步 (Synchrnous)</h3><blockquote>
-<p>一次做一件事，依序執行。</p>
-</blockquote>
-<h3 id="非同步-Asynchrnous"><a href="#非同步-Asynchrnous" class="headerlink" title="非同步 (Asynchrnous)"></a>非同步 (Asynchrnous)</h3><blockquote>
-<p>同時可以做很多事，不需等到上一個事件完成再做下一件。</p>
-</blockquote>
-<img src="https://i.imgur.com/cO5NGxc.png" width="50%" height="50%" />
-
-<p>摁？不是說 JavaScript 是單執行緒，為什麼會有非同步的存在？<br>事情是這樣的，因為 JavaScript 是透過 <code>瀏覽器</code> 在執行的，如果瀏覽器使用同步執行的話，網頁便會塞車，稱為阻塞 (Blocking)。</p>
-<h3 id="瀏覽器何時會使用非同步？"><a href="#瀏覽器何時會使用非同步？" class="headerlink" title="瀏覽器何時會使用非同步？"></a>瀏覽器何時會使用非同步？</h3><ul>
-<li>setTimeout()：setTimeout 是指過了一段時間再處理要發生的事。等時間到了後，再把事件丟回 JavaScript，告訴它我要執行了。</li>
-<li>Ajax：Ajax 是向服務器發送請求，試想一下，如果回傳過程很久，網頁什麼事都不能做，那使用者也只能在螢幕前尷尬了。</li>
-</ul>
-<h3 id="瀏覽器如何管理同步與非同步？"><a href="#瀏覽器如何管理同步與非同步？" class="headerlink" title="瀏覽器如何管理同步與非同步？"></a>瀏覽器如何管理同步與非同步？</h3><p>在 JavaScript 引擎裡可以分為 <em>執行環境 (Execution Context)</em> 和 *事件佇列 (Event Queue)*。<br>Execution Context 主要負責處理同步事件，Event Queue則是處理非同步事件，在處理事件的優先順序為 Execution Context =&gt; Event Queue，而兩者在事件處理完畢後也會跟著離開該環境，瀏覽器便能判斷事件是否結束。</p>
-<p>以下範例，模擬出像是非同步的行為：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;111111&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;222222&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;333333&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>結果如下：<br><img src="https://i.imgur.com/uqAVq1S.gif" width="20%" height="10%" /></p>
-<p>可以瞭解瀏覽器的執行程序為：</p>
-<ol>
-<li>印出 111111</li>
-<li>等 setTimeout 設定的五秒</li>
-<li>印出 333333</li>
-<li>五秒到了，印出 222222</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Javascript</category>
-      </categories>
-      <tags>
-        <tag>Frontend</tag>
-        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -159,6 +121,68 @@
       </tags>
   </entry>
   <entry>
+    <title>JS - 「同步」與「非同步」</title>
+    <url>/20210511/91045.html</url>
+    <content><![CDATA[<h3 id="「單執行緒」與「多執行緒」"><a href="#「單執行緒」與「多執行緒」" class="headerlink" title="「單執行緒」與「多執行緒」"></a>「單執行緒」與「多執行緒」</h3><p>單執行緒指的是一次執行一個指令，不能同時執行多個指令。<br>反之多執行緒指的便是一次能夠執行多個指令。而 JavaScript 則是屬於一種單執行緒的程式語言。</p>
+<h3 id="同步-Synchrnous"><a href="#同步-Synchrnous" class="headerlink" title="同步 (Synchrnous)"></a>同步 (Synchrnous)</h3><blockquote>
+<p>一次做一件事，依序執行。</p>
+</blockquote>
+<h3 id="非同步-Asynchrnous"><a href="#非同步-Asynchrnous" class="headerlink" title="非同步 (Asynchrnous)"></a>非同步 (Asynchrnous)</h3><blockquote>
+<p>同時可以做很多事，不需等到上一個事件完成再做下一件。</p>
+</blockquote>
+<img src="https://i.imgur.com/cO5NGxc.png" width="50%" height="50%" />
+
+<p>摁？不是說 JavaScript 是單執行緒，為什麼會有非同步的存在？<br>事情是這樣的，因為 JavaScript 是透過 <code>瀏覽器</code> 在執行的，如果瀏覽器使用同步執行的話，網頁便會塞車，稱為阻塞 (Blocking)。</p>
+<h3 id="瀏覽器何時會使用非同步？"><a href="#瀏覽器何時會使用非同步？" class="headerlink" title="瀏覽器何時會使用非同步？"></a>瀏覽器何時會使用非同步？</h3><ul>
+<li>setTimeout()：setTimeout 是指過了一段時間再處理要發生的事。等時間到了後，再把事件丟回 JavaScript，告訴它我要執行了。</li>
+<li>Ajax：Ajax 是向服務器發送請求，試想一下，如果回傳過程很久，網頁什麼事都不能做，那使用者也只能在螢幕前尷尬了。</li>
+</ul>
+<h3 id="瀏覽器如何管理同步與非同步？"><a href="#瀏覽器如何管理同步與非同步？" class="headerlink" title="瀏覽器如何管理同步與非同步？"></a>瀏覽器如何管理同步與非同步？</h3><p>在 JavaScript 引擎裡可以分為 <em>執行環境 (Execution Context)</em> 和 *事件佇列 (Event Queue)*。<br>Execution Context 主要負責處理同步事件，Event Queue則是處理非同步事件，在處理事件的優先順序為 Execution Context =&gt; Event Queue，而兩者在事件處理完畢後也會跟著離開該環境，瀏覽器便能判斷事件是否結束。</p>
+<p>以下範例，模擬出像是非同步的行為：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;111111&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;222222&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;333333&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>結果如下：<br><img src="https://i.imgur.com/uqAVq1S.gif" width="20%" height="10%" /></p>
+<p>可以瞭解瀏覽器的執行程序為：</p>
+<ol>
+<li>印出 111111</li>
+<li>等 setTimeout 設定的五秒</li>
+<li>印出 333333</li>
+<li>五秒到了，印出 222222</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Frontend</tag>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Angular - 更改 Title 及 Icon</title>
+    <url>/20210505/013829.html</url>
+    <content><![CDATA[<p>1.更改 Title</p>
+<h4 id="第一步：在-app-module-ts-注入-title-服務"><a href="#第一步：在-app-module-ts-注入-title-服務" class="headerlink" title="第一步：在 app.module.ts 注入 title 服務"></a>第一步：在 app.module.ts 注入 title 服務</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserModule, Title &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppRoutingModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./app-routing.module&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">&#x27;./app.component&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HomeModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./home/home.module&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule,</span><br><span class="line">    HomeModule,</span><br><span class="line">  ],</span><br><span class="line">  providers: [Title],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第二步：在要更改的-Component-中的-constructor-注入與寫上功能"><a href="#第二步：在要更改的-Component-中的-constructor-注入與寫上功能" class="headerlink" title="第二步：在要更改的 Component 中的 constructor 注入與寫上功能"></a>第二步：在要更改的 Component 中的 constructor 注入與寫上功能</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Title &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">&#x27;app-home&#x27;</span>,</span><br><span class="line">  templateUrl: <span class="string">&#x27;./home.component.html&#x27;</span>,</span><br><span class="line">  styleUrls: [<span class="string">&#x27;./home.component.sass&#x27;</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  <span class="title">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    private titleService: Title</span>) &#123;</span><br><span class="line">    <span class="built_in">this</span>.titleService.setTitle(<span class="string">&#x27;This is my title&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更改 Title 完成。</p>
+<p>2.更改網頁 Icon</p>
+<h4 id="第一步：將欲使用的-ico-檔放置於-assets-資料夾"><a href="#第一步：將欲使用的-ico-檔放置於-assets-資料夾" class="headerlink" title="第一步：將欲使用的 ico 檔放置於 assets 資料夾"></a>第一步：將欲使用的 ico 檔放置於 assets 資料夾</h4><p>ng serve 啟動後，輸入 <code>http://localhost:4200/assets/xxxx.ico</code> 可確認圖片是否顯示。<br>※Angular預設 port 是4200，網址會依您服務設定的 port 而有所不同。</p>
+<h4 id="第二步：將-icon-的連結改為-“assets-xxxx-ico”"><a href="#第二步：將-icon-的連結改為-“assets-xxxx-ico”" class="headerlink" title="第二步：將 icon 的連結改為 “assets/xxxx.ico”"></a>第二步：將 icon 的連結改為 “assets/xxxx.ico”</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">  &lt;title&gt;Portfolio&lt;/title&gt;</span><br><span class="line">  &lt;base href=<span class="string">&quot;/&quot;</span>&gt;</span><br><span class="line">  &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span><br><span class="line">  &lt;link rel=<span class="string">&quot;icon&quot;</span> type=<span class="string">&quot;image/x-icon&quot;</span> href=<span class="string">&quot;assets/sshaannnn.ico&quot;</span>&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+
+<p>更改網頁 Icon 完成。</p>
+<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a href="https://angular.io/guide/set-document-title">Angular官方文件/動態調整Title</a></em></p>
+]]></content>
+      <categories>
+        <category>Angular</category>
+      </categories>
+      <tags>
+        <tag>Frontend</tag>
+        <tag>Angular</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Angular - 組件傳值</title>
     <url>/20210429/917901.html</url>
     <content><![CDATA[<h2 id="父傳子"><a href="#父傳子" class="headerlink" title="父傳子"></a>父傳子</h2><ul>
@@ -198,30 +222,6 @@
 
 <p>父元件接到後即可執行。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">dadGet(msg: string): <span class="keyword">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Angular</category>
-      </categories>
-      <tags>
-        <tag>Frontend</tag>
-        <tag>Angular</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Angular - 更改 Title 及 Icon</title>
-    <url>/20210505/013829.html</url>
-    <content><![CDATA[<p>1.更改 Title</p>
-<h4 id="第一步：在-app-module-ts-注入-title-服務"><a href="#第一步：在-app-module-ts-注入-title-服務" class="headerlink" title="第一步：在 app.module.ts 注入 title 服務"></a>第一步：在 app.module.ts 注入 title 服務</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserModule, Title &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppRoutingModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./app-routing.module&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">&#x27;./app.component&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HomeModule &#125; <span class="keyword">from</span> <span class="string">&#x27;./home/home.module&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule,</span><br><span class="line">    HomeModule,</span><br><span class="line">  ],</span><br><span class="line">  providers: [Title],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第二步：在要更改的-Component-中的-constructor-注入與寫上功能"><a href="#第二步：在要更改的-Component-中的-constructor-注入與寫上功能" class="headerlink" title="第二步：在要更改的 Component 中的 constructor 注入與寫上功能"></a>第二步：在要更改的 Component 中的 constructor 注入與寫上功能</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Title &#125; <span class="keyword">from</span> <span class="string">&#x27;@angular/platform-browser&#x27;</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">&#x27;app-home&#x27;</span>,</span><br><span class="line">  templateUrl: <span class="string">&#x27;./home.component.html&#x27;</span>,</span><br><span class="line">  styleUrls: [<span class="string">&#x27;./home.component.sass&#x27;</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">  <span class="title">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    private titleService: Title</span>) &#123;</span><br><span class="line">    <span class="built_in">this</span>.titleService.setTitle(<span class="string">&#x27;This is my title&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>更改 Title 完成。</p>
-<p>2.更改網頁 Icon</p>
-<h4 id="第一步：將欲使用的-ico-檔放置於-assets-資料夾"><a href="#第一步：將欲使用的-ico-檔放置於-assets-資料夾" class="headerlink" title="第一步：將欲使用的 ico 檔放置於 assets 資料夾"></a>第一步：將欲使用的 ico 檔放置於 assets 資料夾</h4><p>ng serve 啟動後，輸入 <code>http://localhost:4200/assets/xxxx.ico</code> 可確認圖片是否顯示。<br>※Angular預設 port 是4200，網址會依您服務設定的 port 而有所不同。</p>
-<h4 id="第二步：將-icon-的連結改為-“assets-xxxx-ico”"><a href="#第二步：將-icon-的連結改為-“assets-xxxx-ico”" class="headerlink" title="第二步：將 icon 的連結改為 “assets/xxxx.ico”"></a>第二步：將 icon 的連結改為 “assets/xxxx.ico”</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">  &lt;title&gt;Portfolio&lt;/title&gt;</span><br><span class="line">  &lt;base href=<span class="string">&quot;/&quot;</span>&gt;</span><br><span class="line">  &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span><br><span class="line">  &lt;link rel=<span class="string">&quot;icon&quot;</span> type=<span class="string">&quot;image/x-icon&quot;</span> href=<span class="string">&quot;assets/sshaannnn.ico&quot;</span>&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-
-<p>更改網頁 Icon 完成。</p>
-<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a href="https://angular.io/guide/set-document-title">Angular官方文件/動態調整Title</a></em></p>
 ]]></content>
       <categories>
         <category>Angular</category>
