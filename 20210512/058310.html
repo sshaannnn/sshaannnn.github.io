@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://i.imgur.com/8XhZoj8.png">
 <meta property="og:image" content="https://i.imgur.com/E8sTbJE.png">
 <meta property="article:published_time" content="2021-05-12T01:44:33.000Z">
-<meta property="article:modified_time" content="2021-05-12T10:07:26.464Z">
+<meta property="article:modified_time" content="2021-05-13T03:11:02.870Z">
 <meta property="article:author" content="SHAN WU">
 <meta property="article:tag" content="Frontend">
 <meta property="article:tag" content="Bootstrap 5">
@@ -198,10 +198,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2021-05-12 09:44:33 / 修改時間：18:07:26" itemprop="dateCreated datePublished" datetime="2021-05-12T09:44:33+08:00">2021-05-12</time>
+              <time title="創建時間：2021-05-12 09:44:33" itemprop="dateCreated datePublished" datetime="2021-05-12T09:44:33+08:00">2021-05-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-13 11:11:02" itemprop="dateModified" datetime="2021-05-13T11:11:02+08:00">2021-05-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -314,7 +320,7 @@
 <p>這時候就可以使用 <strong>CSS 累加</strong>的方式，寫一行只有背景顏色的程式碼，並加在原本的 CSS 後方。</p>
 <img src="https://i.imgur.com/8XhZoj8.png" width="40%" height="40%" />
 
-<p>依照 CSS權重，後面的 CSS 樣式會覆蓋掉前面的樣式，如下圖，一開始黑色 btn 的背景顏色就會被槓掉，換成第二個 CSS 的黃色，其餘一模一樣。</p>
+<p>因為後面的 CSS 樣式會覆蓋掉前面的樣式，如下圖，一開始黑色 btn 的背景顏色就會被槓掉，換成第二個 CSS 的黃色，其餘一模一樣。</p>
 <img src="https://i.imgur.com/E8sTbJE.png" width="40%" height="40%" />
 
 <h3 id="CSS-權重"><a href="#CSS-權重" class="headerlink" title="CSS 權重"></a>CSS 權重</h3><p>基本的權重為 <code>inline style &gt; ID &gt; Class &gt; Element &gt; *</code></p>
@@ -326,18 +332,17 @@
 <ul>
 <li>element：所有權重皆為 <code>0-0-0-1</code>。</li>
 </ul>
-<p><code>div, p, ul, ol, li, em, header, footer .....</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div, p, h1, ul, ol, li, em, header, footer .....</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>class：分成在 CSS 裡的及 html 裡的，但權重皆為 <code>0-0-1-0</code>。</li>
 </ul>
-<p><code>class=&quot;box&quot;</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">   color : #000000;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;box&quot;</span>;</span><br><span class="line"></span><br><span class="line">.box&#123;</span><br><span class="line">   color : #000000;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>id：分成在 CSS 裡的及 html 裡的，但權重皆為 <code>0-1-0-0</code>。</li>
 </ul>
-<p><code>id=&quot;box&quot;</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#box&#123;</span><br><span class="line">   color : #000000;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">id=<span class="string">&quot;box&quot;</span>;</span><br><span class="line"></span><br><span class="line">#box&#123;</span><br><span class="line">   color : #000000;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>inline style：寫在 html 行內的 style，權重為 <code>1-0-0-0</code>。</li>
@@ -346,6 +351,13 @@
 
 <p>但還有一個老大叫做 <strong>!important</strong>，!important 的權重非常高，可以蓋過所有的權重。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">   color : #000000; !important</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>eg：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** html */</span></span><br><span class="line">&lt;h1 <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;title1 title2&quot;</span>&gt;標題&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** CSS */</span></span><br><span class="line">.title1&#123;</span><br><span class="line"> color: red;</span><br><span class="line">&#125;</span><br><span class="line">.title2&#123;</span><br><span class="line"> color: black;</span><br><span class="line">&#125;</span><br><span class="line">h1&#123;</span><br><span class="line"> color: pink;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 顏色為黑色，因為 h1 權重為 1，class 權重為 10，而 title2 把 title1 覆蓋了。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** html */</span></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;container&quot;</span>&gt;</span><br><span class="line">    &lt;h1 <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;title1 title2&quot;</span>&gt;標題&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** CSS */</span></span><br><span class="line">.title1&#123;</span><br><span class="line"> color: red;</span><br><span class="line">&#125;</span><br><span class="line">.title2&#123;</span><br><span class="line"> color: black;</span><br><span class="line">&#125;</span><br><span class="line">h1&#123;</span><br><span class="line"> color: pink;</span><br><span class="line">&#125;</span><br><span class="line">.container h1&#123;</span><br><span class="line"> color: yellow;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 顏色為黃色，因為class 權重為 10，而 container + h1 為 11。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** html */</span></span><br><span class="line">&lt;h1 <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;title2 title1&quot;</span>&gt;標題&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** CSS */</span></span><br><span class="line">.title1&#123;</span><br><span class="line"> color: red;</span><br><span class="line">&#125;</span><br><span class="line">.title2&#123;</span><br><span class="line"> color: black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 顏色為黑色，只會看 CSS 的順序，不會看 html 的前後。</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><p><em><a target="_blank" rel="noopener" href="https://getbootstrap.com/docs/4.6/getting-started/introduction/">Bootstrap 5 官方文件</a></em><br><em><a target="_blank" rel="noopener" href="https://blog.yyisyou.tw/58be4690/">Reset CSS與Normalize CSS介紹</a></em></p>
 
