@@ -152,44 +152,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JS - 「同步」與「非同步」</title>
-    <url>/20210511/910458.html</url>
-    <content><![CDATA[<h3 id="「單執行緒」與「多執行緒」"><a href="#「單執行緒」與「多執行緒」" class="headerlink" title="「單執行緒」與「多執行緒」"></a>「單執行緒」與「多執行緒」</h3><p>單執行緒指的是一次執行一個指令，不能同時執行多個指令。<br>反之多執行緒指的便是一次能夠執行多個指令。而 JavaScript 則是屬於一種單執行緒的程式語言。</p>
-<h3 id="同步-Synchrnous"><a href="#同步-Synchrnous" class="headerlink" title="同步 (Synchrnous)"></a>同步 (Synchrnous)</h3><blockquote>
-<p>一次做一件事，依序執行。</p>
-</blockquote>
-<h3 id="非同步-Asynchrnous"><a href="#非同步-Asynchrnous" class="headerlink" title="非同步 (Asynchrnous)"></a>非同步 (Asynchrnous)</h3><blockquote>
-<p>同時可以做很多事，不需等到上一個事件完成再做下一件。</p>
-</blockquote>
-<img src="https://i.imgur.com/cO5NGxc.png" width="50%" height="50%" />
-
-<p>摁？不是說 JavaScript 是單執行緒，為什麼會有非同步的存在？<br>事情是這樣的，因為 JavaScript 是透過 <code>瀏覽器</code> 在執行的，如果瀏覽器使用同步執行的話，網頁便會塞車，稱為阻塞 (Blocking)。</p>
-<h3 id="瀏覽器何時會使用非同步？"><a href="#瀏覽器何時會使用非同步？" class="headerlink" title="瀏覽器何時會使用非同步？"></a>瀏覽器何時會使用非同步？</h3><ul>
-<li>setTimeout()：setTimeout 是指過了一段時間再處理要發生的事。等時間到了後，再把事件丟回 JavaScript，告訴它我要執行了。</li>
-<li>Ajax：Ajax 是向服務器發送請求，試想一下，如果回傳過程很久，網頁什麼事都不能做，那使用者也只能在螢幕前尷尬了。</li>
-</ul>
-<h3 id="瀏覽器如何管理同步與非同步？"><a href="#瀏覽器如何管理同步與非同步？" class="headerlink" title="瀏覽器如何管理同步與非同步？"></a>瀏覽器如何管理同步與非同步？</h3><p>在 JavaScript 引擎裡可以分為 <strong>執行環境 (Execution Context)</strong> 和 **事件佇列 (Event Queue)**。<br>Execution Context 主要負責處理同步事件，Event Queue則是處理非同步事件，在處理事件的優先順序為 Execution Context =&gt; Event Queue，而兩者在事件處理完畢後也會跟著離開該環境，瀏覽器便能判斷事件是否結束。</p>
-<p>以下範例，模擬出像是非同步的行為：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;111111&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;222222&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;333333&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>結果如下：<br><img src="https://i.imgur.com/uqAVq1S.gif" width="20%" height="10%" /></p>
-<p>可以瞭解瀏覽器的執行程序為：</p>
-<ol>
-<li>印出 111111</li>
-<li>等 setTimeout 設定的五秒</li>
-<li>印出 333333</li>
-<li>五秒到了，印出 222222</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Javascript</category>
-      </categories>
-      <tags>
-        <tag>Frontend</tag>
-        <tag>Javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JS - 「傳值」或「傳址」</title>
     <url>/20210420/490932.html</url>
     <content><![CDATA[<h2 id="基本型別"><a href="#基本型別" class="headerlink" title="基本型別"></a>基本型別</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
@@ -267,6 +229,45 @@
       </tags>
   </entry>
   <entry>
+    <title>Node.js - 使用 Node.js 爬蟲</title>
+    <url>/20211018/749274.html</url>
+    <content><![CDATA[<h4 id="模組"><a href="#模組" class="headerlink" title="模組"></a>模組</h4><p>node.js 爬蟲需要用到兩個 Library</p>
+<ul>
+<li>request：主要是用來模擬 HTTP 的動作，可以用來取得整個頁面的 HTML。</li>
+<li>cheerio：從 HTML 中擷取需要的資料。</li>
+</ul>
+<h4 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm i request -s</span><br><span class="line">$ npm i cheerio -s</span><br></pre></td></tr></table></figure>
+<h4 id="載入"><a href="#載入" class="headerlink" title="載入"></a>載入</h4><p>安裝好後就可以看到專案的 package.json 已經出現，這時候就可以引入程式中。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">&quot;request&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cheerio = <span class="built_in">require</span>(<span class="string">&quot;cheerio&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="觀察"><a href="#觀察" class="headerlink" title="觀察"></a>觀察</h4><p>這邊使用 Ptt Marvel 板檔做範例，會用到 Chrome Dev Tool 來分析網頁的 html。<br>1.先取得需要的區塊<br><img src="https://i.imgur.com/xRdpoCc.png" width="80%" height="30%" /></p>
+<p>2.接著可以看到一個 <code>&lt;div class=&quot;r-ent&quot;&gt;&lt;/div&gt;</code> 就是一個小區塊。</p>
+<img src="https://i.imgur.com/hhSCuvw.png" width="80%" height="30%" />
+
+<h4 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h4><p>找到需要的畫面後，就需要用 <strong>request</strong> 抓取頁面 html，而這裡的 body 是一整網頁裡 body 的內容。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> getMarvelTitle = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  request(&#123;</span><br><span class="line">    url: <span class="string">&quot;https://www.ptt.cc/bbs/Marvel/index.html&quot;</span>,</span><br><span class="line">    method: <span class="string">&quot;GET&quot;</span></span><br><span class="line">  &#125;, <span class="function">(<span class="params">error, res, body</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 如果有錯誤訊息，或沒有 body(內容)，就 return</span></span><br><span class="line">     <span class="keyword">if</span> (error || !body) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
+
+<p>接著使用 <strong>cheerio</strong> 擷取 body 裡需要的部分。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> data = [];</span><br><span class="line">   <span class="keyword">const</span> $ = cheerio.load(body); <span class="comment">// 載入 body</span></span><br><span class="line">   <span class="keyword">const</span> list = $(<span class="string">&quot;.r-list-container .r-ent&quot;</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">     <span class="keyword">const</span> title = list.eq(i).find(<span class="string">&#x27;.title a&#x27;</span>).text();</span><br><span class="line">     <span class="keyword">const</span> author = list.eq(i).find(<span class="string">&#x27;.meta .author&#x27;</span>).text();</span><br><span class="line">     <span class="keyword">const</span> date = list.eq(i).find(<span class="string">&#x27;.meta .date&#x27;</span>).text();</span><br><span class="line">     <span class="keyword">const</span> link = list.eq(i).find(<span class="string">&#x27;.title a&#x27;</span>).attr(<span class="string">&#x27;href&#x27;</span>);</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (title.indexOf(<span class="string">&#x27;經驗&#x27;</span>) === <span class="number">1</span>) data.push(&#123; title, author, date, link &#125;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>因為我只想看經驗文所以只撈經驗文出來，撈出來的畫面如下。<br>這邊使用 for 迴圈是因為父元素 (.r-list-container) 裡包著許多子元素 (.r-ent) 的結構。</p>
+<img src="https://i.imgur.com/Pt79WKU.png" width="80%" height="30%" />
+
+<p>除了爬標題外，也可以順便爬文章內容，一樣會使用到 request、cheerio。<br>不同的是 <strong>request 的網址</strong> 及 <strong>載入 body 後的程式碼</strong>。</p>
+<p>首先一樣先分析網頁，可以看到文章內容是在 <code>&lt;div id=&quot;main-content&quot; class=&quot;bbs-screen bbs-content&quot;&gt;&lt;/div&gt;</code> 裡，所以就直接選擇 <code>css=&quot;bbs-content&quot;</code> 的元素即可。</p>
+<img src="https://i.imgur.com/o49GASx.png" width="80%" height="30%" />
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> $ = cheerio.load(body); </span><br><span class="line">    <span class="keyword">const</span> list = $(<span class="string">&quot;.bbs-content&quot;</span>);</span><br><span class="line">    <span class="keyword">let</span> word;</span><br><span class="line">    list.each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      word = $(<span class="built_in">this</span>).text()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    word = word.slice(<span class="number">0</span>, word.indexOf(<span class="string">&#x27;-----&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p>最後爬到的內容會包含下面的留言區塊，直接使用 <strong>slice</strong> 把 <code>-----</code> 後面的都砍掉，就會單獨顯示文章內容了～</p>
+<img src="https://i.imgur.com/rXmP7UO.png" width="80%" height="30%" />]]></content>
+      <categories>
+        <category>Node.js</category>
+      </categories>
+      <tags>
+        <tag>Backend</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Angular - 組件傳值</title>
     <url>/20210429/917901.html</url>
     <content><![CDATA[<h2 id="父傳子"><a href="#父傳子" class="headerlink" title="父傳子"></a>父傳子</h2><ul>
@@ -316,45 +317,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Node.js - 使用 Node.js 爬 Ptt Marvel 板</title>
-    <url>/20211018/749274.html</url>
-    <content><![CDATA[<h4 id="模組"><a href="#模組" class="headerlink" title="模組"></a>模組</h4><p>node.js 爬蟲需要用到兩個 Library</p>
-<ul>
-<li>request：主要是用來模擬 HTTP 的動作，可以用來取得整個頁面的 HTML。</li>
-<li>cheerio：從 HTML 中擷取需要的資料。</li>
-</ul>
-<h4 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm i request -s</span><br><span class="line">$ npm i cheerio -s</span><br></pre></td></tr></table></figure>
-<h4 id="載入"><a href="#載入" class="headerlink" title="載入"></a>載入</h4><p>安裝好後就可以看到專案的 package.json 已經出現，這時候就可以引入程式中。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">&quot;request&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cheerio = <span class="built_in">require</span>(<span class="string">&quot;cheerio&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="觀察"><a href="#觀察" class="headerlink" title="觀察"></a>觀察</h4><p>這邊使用 Ptt Marvel 板檔做範例，會用到 Chrome Dev Tool 來分析網頁的 html。<br>1.先取得需要的區塊<br><img src="https://i.imgur.com/xRdpoCc.png" width="80%" height="30%" /></p>
-<p>2.接著可以看到一個 <code>&lt;div class=&quot;r-ent&quot;&gt;&lt;/div&gt;</code> 就是一個小區塊。</p>
-<img src="https://i.imgur.com/hhSCuvw.png" width="80%" height="30%" />
-
-<h4 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h4><p>找到需要的畫面後，就需要用 <strong>request</strong> 抓取頁面 html，而這裡的 body 是一整網頁裡 body 的內容。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> getMarvelTitle = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  request(&#123;</span><br><span class="line">    url: <span class="string">&quot;https://www.ptt.cc/bbs/Marvel/index.html&quot;</span>,</span><br><span class="line">    method: <span class="string">&quot;GET&quot;</span></span><br><span class="line">  &#125;, <span class="function">(<span class="params">error, res, body</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 如果有錯誤訊息，或沒有 body(內容)，就 return</span></span><br><span class="line">     <span class="keyword">if</span> (error || !body) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
-
-<p>接著使用 <strong>cheerio</strong> 擷取 body 裡需要的部分。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> data = [];</span><br><span class="line">   <span class="keyword">const</span> $ = cheerio.load(body); <span class="comment">// 載入 body</span></span><br><span class="line">   <span class="keyword">const</span> list = $(<span class="string">&quot;.r-list-container .r-ent&quot;</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">     <span class="keyword">const</span> title = list.eq(i).find(<span class="string">&#x27;.title a&#x27;</span>).text();</span><br><span class="line">     <span class="keyword">const</span> author = list.eq(i).find(<span class="string">&#x27;.meta .author&#x27;</span>).text();</span><br><span class="line">     <span class="keyword">const</span> date = list.eq(i).find(<span class="string">&#x27;.meta .date&#x27;</span>).text();</span><br><span class="line">     <span class="keyword">const</span> link = list.eq(i).find(<span class="string">&#x27;.title a&#x27;</span>).attr(<span class="string">&#x27;href&#x27;</span>);</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span> (title.indexOf(<span class="string">&#x27;經驗&#x27;</span>) === <span class="number">1</span>) data.push(&#123; title, author, date, link &#125;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>因為我只想看經驗文所以只撈經驗文出來，撈出來的畫面如下。<br>這邊使用 for 迴圈是因為父元素 (.r-list-container) 裡包著許多子元素 (.r-ent) 的結構。</p>
-<img src="https://i.imgur.com/Pt79WKU.png" width="80%" height="30%" />
-
-<p>除了爬標題外，也可以順便爬文章內容，一樣會使用到 request、cheerio。<br>不同的是 <strong>request 的網址</strong> 及 <strong>載入 body 後的程式碼</strong>。</p>
-<p>首先一樣先分析網頁，可以看到文章內容是在 <code>&lt;div id=&quot;main-content&quot; class=&quot;bbs-screen bbs-content&quot;&gt;&lt;/div&gt;</code> 裡，所以就直接選擇 <code>css=&quot;bbs-content&quot;</code> 的元素即可。</p>
-<img src="https://i.imgur.com/o49GASx.png" width="80%" height="30%" />
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> $ = cheerio.load(body); </span><br><span class="line">    <span class="keyword">const</span> list = $(<span class="string">&quot;.bbs-content&quot;</span>);</span><br><span class="line">    <span class="keyword">let</span> word;</span><br><span class="line">    list.each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      word = $(<span class="built_in">this</span>).text()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    word = word.slice(<span class="number">0</span>, word.indexOf(<span class="string">&#x27;-----&#x27;</span>));</span><br></pre></td></tr></table></figure>
-<p>最後爬到的內容會包含下面的留言區塊，直接使用 <strong>slice</strong> 把 <code>-----</code> 後面的都砍掉，就會單獨顯示文章內容了～</p>
-<img src="https://i.imgur.com/rXmP7UO.png" width="80%" height="30%" />]]></content>
-      <categories>
-        <category>Node.js</category>
-      </categories>
-      <tags>
-        <tag>Backend</tag>
-        <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git commit 規範</title>
     <url>/20210422/297699.html</url>
     <content><![CDATA[<blockquote>
@@ -401,6 +363,44 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS - 「同步」與「非同步」</title>
+    <url>/20210511/910458.html</url>
+    <content><![CDATA[<h3 id="「單執行緒」與「多執行緒」"><a href="#「單執行緒」與「多執行緒」" class="headerlink" title="「單執行緒」與「多執行緒」"></a>「單執行緒」與「多執行緒」</h3><p>單執行緒指的是一次執行一個指令，不能同時執行多個指令。<br>反之多執行緒指的便是一次能夠執行多個指令。而 JavaScript 則是屬於一種單執行緒的程式語言。</p>
+<h3 id="同步-Synchrnous"><a href="#同步-Synchrnous" class="headerlink" title="同步 (Synchrnous)"></a>同步 (Synchrnous)</h3><blockquote>
+<p>一次做一件事，依序執行。</p>
+</blockquote>
+<h3 id="非同步-Asynchrnous"><a href="#非同步-Asynchrnous" class="headerlink" title="非同步 (Asynchrnous)"></a>非同步 (Asynchrnous)</h3><blockquote>
+<p>同時可以做很多事，不需等到上一個事件完成再做下一件。</p>
+</blockquote>
+<img src="https://i.imgur.com/cO5NGxc.png" width="50%" height="50%" />
+
+<p>摁？不是說 JavaScript 是單執行緒，為什麼會有非同步的存在？<br>事情是這樣的，因為 JavaScript 是透過 <code>瀏覽器</code> 在執行的，如果瀏覽器使用同步執行的話，網頁便會塞車，稱為阻塞 (Blocking)。</p>
+<h3 id="瀏覽器何時會使用非同步？"><a href="#瀏覽器何時會使用非同步？" class="headerlink" title="瀏覽器何時會使用非同步？"></a>瀏覽器何時會使用非同步？</h3><ul>
+<li>setTimeout()：setTimeout 是指過了一段時間再處理要發生的事。等時間到了後，再把事件丟回 JavaScript，告訴它我要執行了。</li>
+<li>Ajax：Ajax 是向服務器發送請求，試想一下，如果回傳過程很久，網頁什麼事都不能做，那使用者也只能在螢幕前尷尬了。</li>
+</ul>
+<h3 id="瀏覽器如何管理同步與非同步？"><a href="#瀏覽器如何管理同步與非同步？" class="headerlink" title="瀏覽器如何管理同步與非同步？"></a>瀏覽器如何管理同步與非同步？</h3><p>在 JavaScript 引擎裡可以分為 <strong>執行環境 (Execution Context)</strong> 和 **事件佇列 (Event Queue)**。<br>Execution Context 主要負責處理同步事件，Event Queue則是處理非同步事件，在處理事件的優先順序為 Execution Context =&gt; Event Queue，而兩者在事件處理完畢後也會跟著離開該環境，瀏覽器便能判斷事件是否結束。</p>
+<p>以下範例，模擬出像是非同步的行為：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;111111&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;222222&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;333333&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>結果如下：<br><img src="https://i.imgur.com/uqAVq1S.gif" width="20%" height="10%" /></p>
+<p>可以瞭解瀏覽器的執行程序為：</p>
+<ol>
+<li>印出 111111</li>
+<li>等 setTimeout 設定的五秒</li>
+<li>印出 333333</li>
+<li>五秒到了，印出 222222</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Frontend</tag>
+        <tag>Javascript</tag>
       </tags>
   </entry>
 </search>
