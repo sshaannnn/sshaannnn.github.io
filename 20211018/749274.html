@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://i.imgur.com/o49GASx.png">
 <meta property="og:image" content="https://i.imgur.com/rXmP7UO.png">
 <meta property="article:published_time" content="2021-10-18T07:46:55.000Z">
-<meta property="article:modified_time" content="2021-10-18T08:11:33.776Z">
+<meta property="article:modified_time" content="2021-10-18T08:14:30.940Z">
 <meta property="article:author" content="SHAN WU">
 <meta property="article:tag" content="Backend">
 <meta property="article:tag" content="Node.js">
@@ -192,7 +192,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-10-18 15:46:55 / 修改時間：16:11:33" itemprop="dateCreated datePublished" datetime="2021-10-18T15:46:55+08:00">2021-10-18</time>
+              <time title="創建時間：2021-10-18 15:46:55 / 修改時間：16:14:30" itemprop="dateCreated datePublished" datetime="2021-10-18T15:46:55+08:00">2021-10-18</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,7 +240,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">&quot;request&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cheerio = <span class="built_in">require</span>(<span class="string">&quot;cheerio&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <h4 id="觀察"><a href="#觀察" class="headerlink" title="觀察"></a>觀察</h4><p>這邊使用 Ptt Marvel 板檔做範例，會用到 Chrome Dev Tool 來分析網頁的 html。<br>1.先取得需要的區塊<br><img src="https://i.imgur.com/xRdpoCc.png" width="80%" height="30%" /></p>
-<p>2.接著可以看到一個 <code>&lt;div class=&quot;r-ent&quot;&gt;&lt;/div&gt;</code> 就是一個小區塊</p>
+<p>2.接著可以看到一個 <code>&lt;div class=&quot;r-ent&quot;&gt;&lt;/div&gt;</code> 就是一個小區塊。</p>
 <img src="https://i.imgur.com/hhSCuvw.png" width="80%" height="30%" />
 
 <h4 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h4><p>找到需要的畫面後，就需要用 <strong>request</strong> 抓取頁面 html，而這裡的 body 是一整網頁裡 body 的內容。</p>
