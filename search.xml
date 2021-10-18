@@ -274,7 +274,7 @@
 <li>request：主要是用來模擬 HTTP 的動作，可以用來取得整個頁面的 HTML。</li>
 <li>cheerio：從 HTML 中擷取需要的資料。</li>
 </ul>
-<h4 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">$ npm i request -s</span><br><span class="line">$ npm i cheerio -s</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm i request -s</span><br><span class="line">$ npm i cheerio -s</span><br></pre></td></tr></table></figure>
 <h4 id="載入"><a href="#載入" class="headerlink" title="載入"></a>載入</h4><p>安裝好後就可以看到專案的 package.json 已經出現，這時候就可以引入程式中。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">&quot;request&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> cheerio = <span class="built_in">require</span>(<span class="string">&quot;cheerio&quot;</span>);</span><br></pre></td></tr></table></figure>
 
