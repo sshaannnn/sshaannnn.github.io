@@ -20,21 +20,23 @@
     var CONFIG = {"hostname":"sshaannnn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="從 0 開始的 Bootstrap 5 課程，感謝洧杰校長，希望自己能持續更新。">
+  <meta name="description" content="起源於某天客戶突然要求前端下載的文件 (.txt) 無法讓使用者直接修改，因此主管表示那就先把 .txt 的內容使用 AES256 加密，最後再用 Zip 打包 .txt 並且將 Zip 加密讓前端下載。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Angular筆記">
-<meta property="og:url" content="https://sshaannnn.github.io/20210816/842960.html">
+<meta property="og:title" content="Angular + C# DotNetZip 實現下載 Zip 文件">
+<meta property="og:url" content="https://sshaannnn.github.io/20210825/842960.html">
 <meta property="og:site_name" content="少女的腦內多巴胺">
-<meta property="og:description" content="從 0 開始的 Bootstrap 5 課程，感謝洧杰校長，希望自己能持續更新。">
+<meta property="og:description" content="起源於某天客戶突然要求前端下載的文件 (.txt) 無法讓使用者直接修改，因此主管表示那就先把 .txt 的內容使用 AES256 加密，最後再用 Zip 打包 .txt 並且將 Zip 加密讓前端下載。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-08-16T01:49:14.000Z">
-<meta property="article:modified_time" content="2021-08-16T01:50:32.946Z">
+<meta property="og:image" content="https://i.imgur.com/Zu8qPkX.png">
+<meta property="article:published_time" content="2021-08-25T01:49:14.000Z">
+<meta property="article:modified_time" content="2021-08-25T07:52:46.598Z">
 <meta property="article:author" content="SHAN WU">
 <meta property="article:tag" content="Frontend">
 <meta property="article:tag" content="Backend">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/Zu8qPkX.png">
 
-<link rel="canonical" href="https://sshaannnn.github.io/20210816/842960.html">
+<link rel="canonical" href="https://sshaannnn.github.io/20210825/842960.html">
 
 
 <script id="page-configurations">
@@ -47,7 +49,7 @@
   };
 </script>
 
-  <title>Angular筆記 | 少女的腦內多巴胺</title>
+  <title>Angular + C# DotNetZip 實現下載 Zip 文件 | 少女的腦內多巴胺</title>
   
 
 
@@ -162,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210816/842960.html">
+    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210825/842960.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/sshaannnn.png">
@@ -175,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Angular筆記
+          Angular + C# DotNetZip 實現下載 Zip 文件
         </h1>
 
         <div class="post-meta">
@@ -186,7 +188,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2021-08-16 09:49:14 / 修改時間：09:50:32" itemprop="dateCreated datePublished" datetime="2021-08-16T09:49:14+08:00">2021-08-16</time>
+              <time title="創建時間：2021-08-25 09:49:14 / 修改時間：15:52:46" itemprop="dateCreated datePublished" datetime="2021-08-25T09:49:14+08:00">2021-08-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -211,13 +213,13 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/20210816/842960.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210816/842960.html" itemprop="commentCount"></span>
+    <a title="disqus" href="/20210825/842960.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210825/842960.html" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">從 0 開始的 Bootstrap 5 課程，感謝洧杰校長，希望自己能持續更新。</div>
+            <div class="post-description">起源於某天客戶突然要求前端下載的文件 (.txt) 無法讓使用者直接修改，因此主管表示那就先把 .txt 的內容使用 AES256 加密，最後再用 Zip 打包 .txt 並且將 Zip 加密讓前端下載。</div>
 
         </div>
       </header>
@@ -228,7 +230,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h4 id="1-先在-Nuget-加入-dotNetZip，加入後即可在專案中使用。"><a href="#1-先在-Nuget-加入-dotNetZip，加入後即可在專案中使用。" class="headerlink" title="1.先在 Nuget 加入 dotNetZip，加入後即可在專案中使用。"></a>1.先在 Nuget 加入 dotNetZip，加入後即可在專案中使用。</h4><img src="https://i.imgur.com/Zu8qPkX.png" width="80%" height="30%" />
+
+<h4 id="2-將文件壓縮"><a href="#2-將文件壓縮" class="headerlink" title="2.將文件壓縮"></a>2.將文件壓縮</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MemoryStream outputStream = <span class="keyword">new</span> MemoryStream();</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> (<span class="keyword">var</span> zip = <span class="keyword">new</span> ZipFile())</span><br><span class="line">&#123;</span><br><span class="line">    zip.Password = pwd;</span><br><span class="line">    zip.AddEntry(fileName, content);</span><br><span class="line">    zip.Save(outputStream);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> file = Convert.ToBase64String(outputStream.ToArray());</span><br></pre></td></tr></table></figure>
+
+<p>以上程式碼就是壓縮！</p>
+<p>zip.Password 為將 zip 加密的密碼，也可以不需要。</p>
+<p>zip.AddEntry(fileName, content);<br>fileName為 zip 文件裡的檔案名稱，content 為檔案內容。</p>
+<p>zip.Save(outputStream);<br>因為要將 zip 文件轉為 base64，所以這邊直接將 zip 寫入記憶體而不是直接儲存為實體檔。</p>
+<p>最後再將剛剛的記憶體轉成 byte 後再轉 base64 即可。</p>
+
     </div>
 
     
@@ -250,7 +261,10 @@
     <a href="/20210512/058310.html" rel="prev" title="21 天 Bootstrap 5 新手實戰營 - Week 1">
       <i class="fa fa-chevron-left"></i> 21 天 Bootstrap 5 新手實戰營 - Week 1
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/20211018/749274.html" rel="next" title="Node.js - 使用 Node.js 爬 Ptt Marvel 板">
+      Node.js - 使用 Node.js 爬 Ptt Marvel 板 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -319,6 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%85%88%E5%9C%A8-Nuget-%E5%8A%A0%E5%85%A5-dotNetZip%EF%BC%8C%E5%8A%A0%E5%85%A5%E5%BE%8C%E5%8D%B3%E5%8F%AF%E5%9C%A8%E5%B0%88%E6%A1%88%E4%B8%AD%E4%BD%BF%E7%94%A8%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">1.先在 Nuget 加入 dotNetZip，加入後即可在專案中使用。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%B0%87%E6%96%87%E4%BB%B6%E5%A3%93%E7%B8%AE"><span class="nav-number">2.</span> <span class="nav-text">2.將文件壓縮</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,20 +349,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -451,9 +466,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://sshaannnn.github.io/20210816/842960.html";
-    this.page.identifier = "20210816/842960.html";
-    this.page.title = "Angular筆記";
+    this.page.url = "https://sshaannnn.github.io/20210825/842960.html";
+    this.page.identifier = "20210825/842960.html";
+    this.page.title = "Angular + C# DotNetZip 實現下載 Zip 文件";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
