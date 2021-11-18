@@ -267,7 +267,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Node.js - 使用 Node.js 爬蟲</title>
+    <title>Node.js - 使用 Node.js 簡易爬蟲</title>
     <url>/20211018/749274.html</url>
     <content><![CDATA[<h4 id="模組"><a href="#模組" class="headerlink" title="模組"></a>模組</h4><p>node.js 爬蟲需要用到兩個 Library</p>
 <ul>
