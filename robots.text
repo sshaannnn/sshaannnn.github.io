@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /
-Allow: /thetenseintw2025
+Allow: /
 
 Sitemap: https://www.shanny.cc/sitemap.xml
