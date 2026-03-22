@@ -1,518 +1,816 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/sshaannnn-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/sshaannnn-16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2"
+    />
+    <meta name="theme-color" content="#222" />
+    <meta name="generator" content="Hexo 5.4.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon-next.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/sshaannnn-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/sshaannnn-16.png"
+    />
+    <link rel="mask-icon" href="/images/logo.svg" color="#222" />
 
-<link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" />
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"
+    />
+    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css" />
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"sshaannnn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+    <script id="hexo-configurations">
+      var NexT = window.NexT || {};
+      var CONFIG = {
+        hostname: 'sshaannnn.github.io',
+        root: '/',
+        scheme: 'Pisces',
+        version: '7.8.0',
+        exturl: false,
+        sidebar: {
+          position: 'left',
+          display: 'post',
+          padding: 18,
+          offset: 12,
+          onmobile: false,
+        },
+        copycode: { enable: true, show_result: true, style: 'flat' },
+        back2top: { enable: true, sidebar: false, scrollpercent: false },
+        bookmark: { enable: false, color: '#222', save: 'auto' },
+        fancybox: false,
+        mediumzoom: false,
+        lazyload: false,
+        pangu: false,
+        comments: {
+          style: 'tabs',
+          active: null,
+          storage: true,
+          lazyload: false,
+          nav: null,
+        },
+        algolia: {
+          hits: { per_page: 10 },
+          labels: {
+            input_placeholder: 'Search for Posts',
+            hits_empty: "We didn't find any results for the search: ${query}",
+            hits_stats: '${hits} results found in ${time} ms',
+          },
+        },
+        localsearch: {
+          enable: false,
+          trigger: 'auto',
+          top_n_per_article: 1,
+          unescape: false,
+          preload: false,
+        },
+        motion: {
+          enable: false,
+          async: false,
+          transition: {
+            post_block: 'fadeIn',
+            post_header: 'slideDownIn',
+            post_body: 'slideDownIn',
+            coll_header: 'slideLeftIn',
+            sidebar: 'slideUpIn',
+          },
+        },
+        path: 'search.xml',
+      };
+    </script>
 
-  <meta name="description" content="Javascript到底是「傳值」還是「傳址」？">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS - 「傳值」或「傳址」">
-<meta property="og:url" content="https://sshaannnn.github.io/20210420/490932.html">
-<meta property="og:site_name" content="少女的腦內多巴胺">
-<meta property="og:description" content="Javascript到底是「傳值」還是「傳址」？">
-<meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-04-20T03:24:23.000Z">
-<meta property="article:modified_time" content="2021-05-06T05:05:53.122Z">
-<meta property="article:author" content="SHAN WU">
-<meta property="article:tag" content="Frontend">
-<meta property="article:tag" content="Javascript">
-<meta name="twitter:card" content="summary">
+    <meta name="description" content="Javascript到底是「傳值」還是「傳址」？" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="JS - 「傳值」或「傳址」" />
+    <meta
+      property="og:url"
+      content="https://sshaannnn.github.io/20210420/490932.html"
+    />
+    <meta property="og:site_name" content="少女的腦內多巴胺" />
+    <meta
+      property="og:description"
+      content="Javascript到底是「傳值」還是「傳址」？"
+    />
+    <meta property="og:locale" content="zh_TW" />
+    <meta
+      property="article:published_time"
+      content="2021-04-20T03:24:23.000Z"
+    />
+    <meta property="article:modified_time" content="2021-05-06T05:05:53.122Z" />
+    <meta property="article:author" content="SHAN WU" />
+    <meta property="article:tag" content="Frontend" />
+    <meta property="article:tag" content="Javascript" />
+    <meta name="twitter:card" content="summary" />
 
-<link rel="canonical" href="https://sshaannnn.github.io/20210420/490932.html">
+    <link
+      rel="canonical"
+      href="https://sshaannnn.github.io/20210420/490932.html"
+    />
 
+    <script id="page-configurations">
+      // https://hexo.io/docs/variables.html
+      CONFIG.page = {
+        sidebar: '',
+        isHome: false,
+        isPost: true,
+        lang: 'zh-TW',
+      };
+    </script>
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
+    <title>JS - 「傳值」或「傳址」 | 少女的腦內多巴胺</title>
 
-  <title>JS - 「傳值」或「傳址」 | 少女的腦內多巴胺</title>
-  
+    <noscript>
+      <style>
+        .use-motion .brand,
+        .use-motion .menu-item,
+        .sidebar-inner,
+        .use-motion .post-block,
+        .use-motion .pagination,
+        .use-motion .comments,
+        .use-motion .post-header,
+        .use-motion .post-body,
+        .use-motion .collection-header {
+          opacity: initial;
+        }
 
+        .use-motion .site-title,
+        .use-motion .site-subtitle {
+          opacity: initial;
+          top: initial;
+        }
 
+        .use-motion .logo-line-before i {
+          left: initial;
+        }
+        .use-motion .logo-line-after i {
+          right: initial;
+        }
+      </style>
+    </noscript>
+  </head>
 
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div class="container">
+      <div class="headband"></div>
 
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner">
+          <div class="site-brand-container">
+            <div class="site-nav-toggle">
+              <div class="toggle" aria-label="切換導航欄">
+                <span class="toggle-line toggle-line-first"></span>
+                <span class="toggle-line toggle-line-middle"></span>
+                <span class="toggle-line toggle-line-last"></span>
+              </div>
+            </div>
 
+            <div class="site-meta">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before"><i></i></span>
+                <h1 class="site-title">少女的腦內多巴胺</h1>
+                <span class="logo-line-after"><i></i></span>
+              </a>
+            </div>
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+            <div class="site-nav-right">
+              <div class="toggle popup-trigger"></div>
+            </div>
+          </div>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">少女的腦內多巴胺</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210420/490932.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sshaannnn.png">
-      <meta itemprop="name" content="SHAN WU">
-      <meta itemprop="description" content="腦容量不足的前端(x)全端(o)工程師">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="少女的腦內多巴胺">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          JS - 「傳值」或「傳址」
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-04-20 11:24:23" itemprop="dateCreated datePublished" datetime="2021-04-20T11:24:23+08:00">2021-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-06 13:05:53" itemprop="dateModified" datetime="2021-05-06T13:05:53+08:00">2021-05-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/20210420/490932.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210420/490932.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <div class="post-description">Javascript到底是「傳值」還是「傳址」？</div>
-
+          <nav class="site-nav">
+            <ul id="menu" class="main-menu menu">
+              <li class="menu-item menu-item-home">
+                <a href="/" rel="section"
+                  ><i class="fa fa-home fa-fw"></i>首頁</a
+                >
+              </li>
+              <li class="menu-item menu-item-tags">
+                <a href="/tags/" rel="section"
+                  ><i class="fa fa-tags fa-fw"></i>標籤</a
+                >
+              </li>
+              <li class="menu-item menu-item-categories">
+                <a href="/categories/" rel="section"
+                  ><i class="fa fa-th fa-fw"></i>分類</a
+                >
+              </li>
+              <li class="menu-item menu-item-archives">
+                <a href="/archives/" rel="section"
+                  ><i class="fa fa-archive fa-fw"></i>歸檔</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
       </header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        <span>0%</span>
+      </div>
 
-      
-        <h2 id="基本型別"><a href="#基本型別" class="headerlink" title="基本型別"></a>基本型別</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+      <main class="main">
+        <div class="main-inner">
+          <div class="content-wrap">
+            <div class="content post posts-expand">
+              <article
+                itemscope
+                itemtype="http://schema.org/Article"
+                class="post-block"
+                lang="zh-TW"
+              >
+                <link
+                  itemprop="mainEntityOfPage"
+                  href="https://sshaannnn.github.io/20210420/490932.html"
+                />
 
-<p>在基本型別時，會認為兩個變數的「值」是相等的，因為兩個變數的「值」都是 <code>10</code> ，同樣的在字串的情況下也是相同的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&#x27;yswu&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">&#x27;yswu&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&#x27;wu&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === c );      <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+                <span
+                  hidden
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <meta itemprop="image" content="/images/sshaannnn.png" />
+                  <meta itemprop="name" content="SHAN WU" />
+                  <meta
+                    itemprop="description"
+                    content="腦容量不足的前端(x)全端(o)工程師"
+                  />
+                </span>
 
-<p>因此在<strong>基本型別</strong>（如<code>string</code>、<code>number</code>、<code>boolean</code>、<code>null</code>、<code>undefined</code>），判斷兩個變數是否相等，看的是裡面的內容，也就是裡面的「值」。</p>
-<p>繼續來看：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line">c++</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a );   <span class="comment">//10</span></span><br><span class="line"><span class="built_in">console</span>.log( c );   <span class="comment">// 11</span></span><br></pre></td></tr></table></figure>
+                <span
+                  hidden
+                  itemprop="publisher"
+                  itemscope
+                  itemtype="http://schema.org/Organization"
+                >
+                  <meta itemprop="name" content="少女的腦內多巴胺" />
+                </span>
+                <header class="post-header">
+                  <h1 class="post-title" itemprop="name headline">
+                    JS - 「傳值」或「傳址」
+                  </h1>
 
-<p>當 <code>c</code> 指定 <code>a</code> 時，由於 <code>a</code> 是<strong>基本型別</strong>，所以 <code>c</code> 得到的是 <code>a</code> 的值而不是 <code>a</code> 的記憶體位置，所以儘管 <code>c</code> 改變了 <code>a</code> 也不會受到引響，兩者是獨立的。</p>
-<p>當指定（賦值）一個<strong>基本型別</strong>給變數，就稱作「傳值」(pass by value)。</p>
-<h2 id="物件型別"><a href="#物件型別" class="headerlink" title="物件型別"></a>物件型別</h2><p>在物件的情況下，先分別宣告兩個物件，兩個物件都有個 <code>value</code> 的屬性。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );      <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+                  <div class="post-meta">
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                      </span>
+                      <span class="post-meta-item-text">發表於</span>
 
-<p>可以觀察到，<code>obj1</code> 和 <code>obj2</code> 的屬性和值都相同，得到的卻是false。</p>
-<p>這是因為在JavaScript物件，可以把object當作是獨立存在的實體，兩者的記憶體位置並不相同，在比較<strong>物件型別</strong>時，比較的是記憶體位置，而非值。</p>
-<p>繼續來看：將 <code>obj2</code> 利用 <code>obj2 = obj1</code> 的方式來賦值。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );      <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">obj1.value = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log( obj2.value );      <span class="comment">//1 </span></span><br><span class="line"></span><br><span class="line">obj1.flag = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log ( obj2.flag );      <span class="comment">//true </span></span><br></pre></td></tr></table></figure>
+                      <time
+                        title="創建時間：2021-04-20 11:24:23"
+                        itemprop="dateCreated datePublished"
+                        datetime="2021-04-20T11:24:23+08:00"
+                        >2021-04-20</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar-check"></i>
+                      </span>
+                      <span class="post-meta-item-text">更新於</span>
+                      <time
+                        title="修改時間：2021-05-06 13:05:53"
+                        itemprop="dateModified"
+                        datetime="2021-05-06T13:05:53+08:00"
+                        >2021-05-06</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-folder"></i>
+                      </span>
+                      <span class="post-meta-item-text">分類於</span>
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a
+                          href="/categories/Javascript/"
+                          itemprop="url"
+                          rel="index"
+                          ><span itemprop="name">Javascript</span></a
+                        >
+                      </span>
+                    </span>
 
-<p>在這邊可以看到，因為 <code>obj1</code> 與 <code>obj2</code> 兩者變數指向相同的記憶體位置，所以 <code>obj1</code> 做修改或新增， <code>obj2</code> 也會跟著改變。</p>
-<p>但將 <code>obj1</code> 賦值新的物件時：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj1 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-comment"></i>
+                      </span>
+                      <span class="post-meta-item-text">Disqus：</span>
 
-<p>此時因為 <code>obj1</code>指向新的記憶體位置，而 <code>obj2</code> 還在原來的記憶體位置，因此 <code>obj1</code> 和 <code>obj2</code> 就沒有關係了。</p>
-<p>當指定（賦值）一個<strong>物件型別</strong>給變數，就稱作「傳址」(pass by reference)。</p>
-<h2 id="JavaScript-是「傳值」或「傳址」"><a href="#JavaScript-是「傳值」或「傳址」" class="headerlink" title="JavaScript 是「傳值」或「傳址」?"></a>JavaScript 是「傳值」或「傳址」?</h2><p>在大多數的情況下，基本型別是「傳值」，而物件型別會是「傳址」的方式，但<strong>凡事都有例外</strong>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj = &#123; <span class="attr">value</span>: <span class="number">999</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);  <span class="comment">// &#123; value: 10 &#125;</span></span><br></pre></td></tr></table></figure>
+                      <a
+                        title="disqus"
+                        href="/20210420/490932.html#disqus_thread"
+                        itemprop="discussionUrl"
+                      >
+                        <span
+                          class="post-comments-count disqus-comment-count"
+                          data-disqus-identifier="20210420/490932.html"
+                          itemprop="commentCount"
+                        ></span>
+                      </a>
+                    </span>
 
-<p>前面說過物件是利用「傳址」的方式來更新資料，那應該會變成 <code>&#123; value: 999 &#125;</code> 怎麼還是一樣的呢？</p>
-<p>事實上，JavaScript 不屬於單純的「pass by value」或「pass by reference」。 更準確一點來說，JavaScript 應該屬於透過 <code>pass by sharing</code> 來傳遞資料。</p>
-<h2 id="Pass-by-sharing"><a href="#Pass-by-sharing" class="headerlink" title="Pass by sharing"></a>Pass by sharing</h2><p>「Pass by sharing」的特點在於，當 <code>function</code> 的參數，如 <code>function changeValue(obj)&#123; ... &#125;</code> 中的 <code>obj</code> 被重新賦值的時候，外部變數的內容是不會被影響的。</p>
-<p>如果不是重新賦值的情況，則又會回到大家所熟悉的狀況：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj.value = <span class="number">999</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);  <span class="comment">// &#123; value: 999 &#125;</span></span><br></pre></td></tr></table></figure>
+                    <div class="post-description">
+                      Javascript到底是「傳值」還是「傳址」？
+                    </div>
+                  </div>
+                </header>
 
-<p>不少人將 JavaScript 的變數內容傳遞方式，稱為 Pass by sharing：</p>
-<ul>
-<li>碰到<strong>基本型別</strong>，表現行為是 Pass by value。</li>
-<li>碰到<strong>物件型別</strong>，如果只是對物件內容作操作(例如陣列元素或物件屬性)，表現行為是 Pass by reference。</li>
-<li>碰到<strong>物件型別</strong>，如果對物件作重新賦值，表現行為是 Pass by value。</li>
-</ul>
-<p>或者也有人視為：JavaScript 的<strong>基本型別</strong>是 Pass by Value，<strong>物件型別</strong>是 Pass by sharing。</p>
+                <div class="post-body" itemprop="articleBody">
+                  <h2 id="基本型別">
+                    <a href="#基本型別" class="headerlink" title="基本型別"></a
+                    >基本型別
+                  </h2>
+                  <figure class="highlight javascript">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
 
-    </div>
+                  <p>
+                    在基本型別時，會認為兩個變數的「值」是相等的，因為兩個變數的「值」都是
+                    <code>10</code> ，同樣的在字串的情況下也是相同的。
+                  </p>
+                  <figure class="highlight javascript">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">var</span> a = <span class="string">&#x27;yswu&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">&#x27;yswu&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">&#x27;wu&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a === c );      <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log( a === b );      <span class="comment">// true</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
 
-    
-    
-    
+                  <p>
+                    因此在<strong>基本型別</strong>（如<code>string</code>、<code>number</code>、<code>boolean</code>、<code>null</code>、<code>undefined</code>），判斷兩個變數是否相等，看的是裡面的內容，也就是裡面的「值」。
+                  </p>
+                  <p>繼續來看：</p>
+                  <figure class="highlight javascript">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">var</span> c = a;</span><br><span class="line">c++</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( a );   <span class="comment">//10</span></span><br><span class="line"><span class="built_in">console</span>.log( c );   <span class="comment">// 11</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Frontend/" rel="tag"><i class="fa fa-tag"></i> Frontend</a>
-              <a href="/tags/Javascript/" rel="tag"><i class="fa fa-tag"></i> Javascript</a>
+                  <p>
+                    當 <code>c</code> 指定 <code>a</code> 時，由於
+                    <code>a</code> 是<strong>基本型別</strong>，所以
+                    <code>c</code> 得到的是 <code>a</code> 的值而不是
+                    <code>a</code> 的記憶體位置，所以儘管 <code>c</code> 改變了
+                    <code>a</code> 也不會受到引響，兩者是獨立的。
+                  </p>
+                  <p>
+                    當指定（賦值）一個<strong>基本型別</strong>給變數，就稱作「傳值」(pass
+                    by value)。
+                  </p>
+                  <h2 id="物件型別">
+                    <a href="#物件型別" class="headerlink" title="物件型別"></a
+                    >物件型別
+                  </h2>
+                  <p>
+                    在物件的情況下，先分別宣告兩個物件，兩個物件都有個
+                    <code>value</code> 的屬性。
+                  </p>
+                  <figure class="highlight javascript">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );      <span class="comment">// false</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+
+                  <p>
+                    可以觀察到，<code>obj1</code> 和
+                    <code>obj2</code> 的屬性和值都相同，得到的卻是false。
+                  </p>
+                  <p>
+                    這是因為在JavaScript物件，可以把object當作是獨立存在的實體，兩者的記憶體位置並不相同，在比較<strong>物件型別</strong>時，比較的是記憶體位置，而非值。
+                  </p>
+                  <p>
+                    繼續來看：將 <code>obj2</code> 利用
+                    <code>obj2 = obj1</code> 的方式來賦值。
+                  </p>
+                  <figure class="highlight javascript">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span> : <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );      <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">obj1.value = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log( obj2.value );      <span class="comment">//1 </span></span><br><span class="line"></span><br><span class="line">obj1.flag = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log ( obj2.flag );      <span class="comment">//true </span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+
+                  <p>
+                    在這邊可以看到，因為 <code>obj1</code> 與
+                    <code>obj2</code> 兩者變數指向相同的記憶體位置，所以
+                    <code>obj1</code> 做修改或新增，
+                    <code>obj2</code> 也會跟著改變。
+                  </p>
+                  <p>但將 <code>obj1</code> 賦值新的物件時：</p>
+                  <figure class="highlight javascript">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">obj1 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj1 === obj2 );  <span class="comment">// false</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+
+                  <p>
+                    此時因為 <code>obj1</code>指向新的記憶體位置，而
+                    <code>obj2</code> 還在原來的記憶體位置，因此
+                    <code>obj1</code> 和 <code>obj2</code> 就沒有關係了。
+                  </p>
+                  <p>
+                    當指定（賦值）一個<strong>物件型別</strong>給變數，就稱作「傳址」(pass
+                    by reference)。
+                  </p>
+                  <h2 id="JavaScript-是「傳值」或「傳址」">
+                    <a
+                      href="#JavaScript-是「傳值」或「傳址」"
+                      class="headerlink"
+                      title="JavaScript 是「傳值」或「傳址」?"
+                    ></a
+                    >JavaScript 是「傳值」或「傳址」?
+                  </h2>
+                  <p>
+                    在大多數的情況下，基本型別是「傳值」，而物件型別會是「傳址」的方式，但<strong>凡事都有例外</strong>。
+                  </p>
+                  <figure class="highlight javascript">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj = &#123; <span class="attr">value</span>: <span class="number">999</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);  <span class="comment">// &#123; value: 10 &#125;</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+
+                  <p>
+                    前面說過物件是利用「傳址」的方式來更新資料，那應該會變成
+                    <code>&#123; value: 999 &#125;</code> 怎麼還是一樣的呢？
+                  </p>
+                  <p>
+                    事實上，JavaScript 不屬於單純的「pass by value」或「pass by
+                    reference」。 更準確一點來說，JavaScript 應該屬於透過
+                    <code>pass by sharing</code> 來傳遞資料。
+                  </p>
+                  <h2 id="Pass-by-sharing">
+                    <a
+                      href="#Pass-by-sharing"
+                      class="headerlink"
+                      title="Pass by sharing"
+                    ></a
+                    >Pass by sharing
+                  </h2>
+                  <p>
+                    「Pass by sharing」的特點在於，當
+                    <code>function</code> 的參數，如
+                    <code>function changeValue(obj)&#123; ... &#125;</code> 中的
+                    <code>obj</code>
+                    被重新賦值的時候，外部變數的內容是不會被影響的。
+                  </p>
+                  <p>如果不是重新賦值的情況，則又會回到大家所熟悉的狀況：</p>
+                  <figure class="highlight javascript">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj.value = <span class="number">999</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);  <span class="comment">// &#123; value: 999 &#125;</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+
+                  <p>
+                    不少人將 JavaScript 的變數內容傳遞方式，稱為 Pass by
+                    sharing：
+                  </p>
+                  <ul>
+                    <li>
+                      碰到<strong>基本型別</strong>，表現行為是 Pass by value。
+                    </li>
+                    <li>
+                      碰到<strong>物件型別</strong>，如果只是對物件內容作操作(例如陣列元素或物件屬性)，表現行為是
+                      Pass by reference。
+                    </li>
+                    <li>
+                      碰到<strong>物件型別</strong>，如果對物件作重新賦值，表現行為是
+                      Pass by value。
+                    </li>
+                  </ul>
+                  <p>
+                    或者也有人視為：JavaScript 的<strong>基本型別</strong>是
+                    Pass by Value，<strong>物件型別</strong>是 Pass by sharing。
+                  </p>
+                </div>
+
+                <footer class="post-footer">
+                  <div class="post-tags">
+                    <a href="/tags/Frontend/" rel="tag"
+                      ><i class="fa fa-tag"></i> Frontend</a
+                    >
+                    <a href="/tags/Javascript/" rel="tag"
+                      ><i class="fa fa-tag"></i> Javascript</a
+                    >
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-item"></div>
+                    <div class="post-nav-item">
+                      <a
+                        href="/20210422/297699.html"
+                        rel="next"
+                        title="Git commit 規範"
+                      >
+                        Git commit 規範 <i class="fa fa-chevron-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </footer>
+              </article>
+            </div>
+
+            <div style="">
+              <div class="comments">
+                <div id="disqus_thread">
+                  <noscript
+                    >Please enable JavaScript to view the comments powered by
+                    Disqus.</noscript
+                  >
+                </div>
+              </div>
+
+              <script>
+                window.addEventListener('tabs:register', () => {
+                  let { activeClass } = CONFIG.comments;
+                  if (CONFIG.comments.storage) {
+                    activeClass =
+                      localStorage.getItem('comments_active') || activeClass;
+                  }
+                  if (activeClass) {
+                    let activeTab = document.querySelector(
+                      `a[href="#comment-${activeClass}"]`
+                    );
+                    if (activeTab) {
+                      activeTab.click();
+                    }
+                  }
+                });
+                if (CONFIG.comments.storage) {
+                  window.addEventListener('tabs:click', (event) => {
+                    if (
+                      !event.target.matches(
+                        '.tabs-comment .tab-content .tab-pane'
+                      )
+                    )
+                      return;
+                    let commentClass = event.target.classList[1];
+                    localStorage.setItem('comments_active', commentClass);
+                  });
+                }
+              </script>
+            </div>
           </div>
 
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item"></div>
-      <div class="post-nav-item">
-    <a href="/20210422/297699.html" rel="next" title="Git commit 規範">
-      Git commit 規範 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="toggle sidebar-toggle">
+            <span class="toggle-line toggle-line-first"></span>
+            <span class="toggle-line toggle-line-middle"></span>
+            <span class="toggle-line toggle-line-last"></span>
           </div>
-         
-  <div style="">
-  
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
 
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
+          <aside class="sidebar">
+            <div class="sidebar-inner">
+              <ul class="sidebar-nav motion-element">
+                <li class="sidebar-nav-toc">文章目錄</li>
+                <li class="sidebar-nav-overview">本站概要</li>
+              </ul>
 
-  </div>
+              <!--noindex-->
+              <div class="post-toc-wrap sidebar-panel">
+                <div class="post-toc motion-element">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2">
+                      <a
+                        class="nav-link"
+                        href="#%E5%9F%BA%E6%9C%AC%E5%9E%8B%E5%88%A5"
+                        ><span class="nav-number">1.</span>
+                        <span class="nav-text">基本型別</span></a
+                      >
+                    </li>
+                    <li class="nav-item nav-level-2">
+                      <a
+                        class="nav-link"
+                        href="#%E7%89%A9%E4%BB%B6%E5%9E%8B%E5%88%A5"
+                        ><span class="nav-number">2.</span>
+                        <span class="nav-text">物件型別</span></a
+                      >
+                    </li>
+                    <li class="nav-item nav-level-2">
+                      <a
+                        class="nav-link"
+                        href="#JavaScript-%E6%98%AF%E3%80%8C%E5%82%B3%E5%80%BC%E3%80%8D%E6%88%96%E3%80%8C%E5%82%B3%E5%9D%80%E3%80%8D"
+                        ><span class="nav-number">3.</span>
+                        <span class="nav-text"
+                          >JavaScript 是「傳值」或「傳址」?</span
+                        ></a
+                      >
+                    </li>
+                    <li class="nav-item nav-level-2">
+                      <a class="nav-link" href="#Pass-by-sharing"
+                        ><span class="nav-number">4.</span>
+                        <span class="nav-text">Pass by sharing</span></a
+                      >
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <!--/noindex-->
+
+              <div class="site-overview-wrap sidebar-panel">
+                <div
+                  class="site-author motion-element"
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <img
+                    class="site-author-image"
+                    itemprop="image"
+                    alt="SHAN WU"
+                    src="/images/sshaannnn.png"
+                  />
+                  <p class="site-author-name" itemprop="name">SHAN WU</p>
+                  <div class="site-description" itemprop="description">
+                    腦容量不足的前端(x)全端(o)工程師
+                  </div>
+                </div>
+                <div class="site-state-wrap motion-element">
+                  <nav class="site-state">
+                    <div class="site-state-item site-state-posts">
+                      <a href="/archives/">
+                        <span class="site-state-item-count">8</span>
+                        <span class="site-state-item-name">文章</span>
+                      </a>
+                    </div>
+                    <div class="site-state-item site-state-categories">
+                      <a href="/categories/">
+                        <span class="site-state-item-count">6</span>
+                        <span class="site-state-item-name">分類</span></a
+                      >
+                    </div>
+                    <div class="site-state-item site-state-tags">
+                      <a href="/tags/">
+                        <span class="site-state-item-count">8</span>
+                        <span class="site-state-item-name">標籤</span></a
+                      >
+                    </div>
+                  </nav>
+                </div>
+                <div class="links-of-author motion-element">
+                  <span class="links-of-author-item">
+                    <a
+                      href="https://github.com/sshaannnn"
+                      title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sshaannnn"
+                      rel="noopener"
+                      target="_blank"
+                      ><i class="fab fa-github fa-fw"></i
+                    ></a>
+                  </span>
+                  <span class="links-of-author-item">
+                    <a
+                      href="mailto:ysshaannnn@gmail.com"
+                      title="E-Mail → mailto:ysshaannnn@gmail.com"
+                      rel="noopener"
+                      target="_blank"
+                      ><i class="fa fa-envelope fa-fw"></i
+                    ></a>
+                  </span>
+                  <span class="links-of-author-item">
+                    <a
+                      href="https://www.linkedin.com/in/yswuu/"
+                      title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yswuu&#x2F;"
+                      rel="noopener"
+                      target="_blank"
+                      ><i class="fab fa-linkedin fa-fw"></i
+                    ></a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <div id="sidebar-dimmer"></div>
         </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
+      </main>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%9E%8B%E5%88%A5"><span class="nav-number">1.</span> <span class="nav-text">基本型別</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E4%BB%B6%E5%9E%8B%E5%88%A5"><span class="nav-number">2.</span> <span class="nav-text">物件型別</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-%E6%98%AF%E3%80%8C%E5%82%B3%E5%80%BC%E3%80%8D%E6%88%96%E3%80%8C%E5%82%B3%E5%9D%80%E3%80%8D"><span class="nav-number">3.</span> <span class="nav-text">JavaScript 是「傳值」或「傳址」?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pass-by-sharing"><span class="nav-number">4.</span> <span class="nav-text">Pass by sharing</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="SHAN WU"
-      src="/images/sshaannnn.png">
-  <p class="site-author-name" itemprop="name">SHAN WU</p>
-  <div class="site-description" itemprop="description">腦容量不足的前端(x)全端(o)工程師</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">8</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/sshaannnn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sshaannnn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:ysshaannnn@gmail.com" title="E-Mail → mailto:ysshaannnn@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/ysshaannnn/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;ysshaannnn&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
-      </span>
-  </div>
-
-
-
-      </div>
-
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="copyright">
+            &copy;
+            <span itemprop="copyrightYear">2021</span>
+            <span class="with-love">
+              <i class="fas fa-plane"></i>
+            </span>
+            <span class="author" itemprop="copyrightHolder"
+              >少女的腦內多巴胺</span
+            >
+          </div>
+        </div>
+      </footer>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
+    <script src="/lib/anime.min.js"></script>
 
-      </div>
-    </main>
+    <script src="/js/utils.js"></script>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+    <script src="/js/schemes/pisces.js"></script>
 
-        
+    <script src="/js/next-boot.js"></script>
 
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fas fa-plane"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">少女的腦內多巴胺</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://sshaannnn.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  var disqus_config = function() {
-    this.page.url = "https://sshaannnn.github.io/20210420/490932.html";
-    this.page.identifier = "20210420/490932.html";
-    this.page.title = "JS - 「傳值」或「傳址」";
-    };
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
+    <script>
+      function loadCount() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://sshaannnn.disqus.com/count.js';
+        s.id = 'dsq-count-scr';
+        (d.head || d.body).appendChild(s);
+      }
+      // defer loading until the whole page loading is completed
+      window.addEventListener('load', loadCount, false);
+    </script>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://sshaannnn.github.io/20210420/490932.html';
+        this.page.identifier = '20210420/490932.html';
+        this.page.title = 'JS - 「傳值」或「傳址」';
+      };
+      NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+        if (window.DISQUS) {
+          DISQUS.reset({
+            reload: true,
+            config: disqus_config,
+          });
+        } else {
+          var d = document,
+            s = d.createElement('script');
+          s.src = 'https://sshaannnn.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', '' + +new Date());
+          (d.head || d.body).appendChild(s);
+        }
       });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://sshaannnn.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
-</script>
-
-</body>
+    </script>
+  </body>
 </html>

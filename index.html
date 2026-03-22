@@ -1,1102 +1,1389 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/sshaannnn-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/sshaannnn-16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2"
+    />
+    <meta name="theme-color" content="#222" />
+    <meta name="generator" content="Hexo 5.4.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon-next.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/sshaannnn-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/sshaannnn-16.png"
+    />
+    <link rel="mask-icon" href="/images/logo.svg" color="#222" />
 
-<link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css" />
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"
+    />
+    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css" />
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"sshaannnn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+    <script id="hexo-configurations">
+      var NexT = window.NexT || {};
+      var CONFIG = {
+        hostname: 'sshaannnn.github.io',
+        root: '/',
+        scheme: 'Pisces',
+        version: '7.8.0',
+        exturl: false,
+        sidebar: {
+          position: 'left',
+          display: 'post',
+          padding: 18,
+          offset: 12,
+          onmobile: false,
+        },
+        copycode: { enable: true, show_result: true, style: 'flat' },
+        back2top: { enable: true, sidebar: false, scrollpercent: false },
+        bookmark: { enable: false, color: '#222', save: 'auto' },
+        fancybox: false,
+        mediumzoom: false,
+        lazyload: false,
+        pangu: false,
+        comments: {
+          style: 'tabs',
+          active: null,
+          storage: true,
+          lazyload: false,
+          nav: null,
+        },
+        algolia: {
+          hits: { per_page: 10 },
+          labels: {
+            input_placeholder: 'Search for Posts',
+            hits_empty: "We didn't find any results for the search: ${query}",
+            hits_stats: '${hits} results found in ${time} ms',
+          },
+        },
+        localsearch: {
+          enable: false,
+          trigger: 'auto',
+          top_n_per_article: 1,
+          unescape: false,
+          preload: false,
+        },
+        motion: {
+          enable: false,
+          async: false,
+          transition: {
+            post_block: 'fadeIn',
+            post_header: 'slideDownIn',
+            post_body: 'slideDownIn',
+            coll_header: 'slideLeftIn',
+            sidebar: 'slideUpIn',
+          },
+        },
+        path: 'search.xml',
+      };
+    </script>
 
-  <meta name="description" content="腦容量不足的前端(x)全端(o)工程師">
-<meta property="og:type" content="website">
-<meta property="og:title" content="少女的腦內多巴胺">
-<meta property="og:url" content="https://sshaannnn.github.io/index.html">
-<meta property="og:site_name" content="少女的腦內多巴胺">
-<meta property="og:description" content="腦容量不足的前端(x)全端(o)工程師">
-<meta property="og:locale" content="zh_TW">
-<meta property="article:author" content="SHAN WU">
-<meta name="twitter:card" content="summary">
+    <meta name="description" content="腦容量不足的前端(x)全端(o)工程師" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="少女的腦內多巴胺" />
+    <meta property="og:url" content="https://sshaannnn.github.io/index.html" />
+    <meta property="og:site_name" content="少女的腦內多巴胺" />
+    <meta
+      property="og:description"
+      content="腦容量不足的前端(x)全端(o)工程師"
+    />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="article:author" content="SHAN WU" />
+    <meta name="twitter:card" content="summary" />
 
-<link rel="canonical" href="https://sshaannnn.github.io/">
+    <link rel="canonical" href="https://sshaannnn.github.io/" />
 
+    <script id="page-configurations">
+      // https://hexo.io/docs/variables.html
+      CONFIG.page = {
+        sidebar: '',
+        isHome: true,
+        isPost: false,
+        lang: 'zh-TW',
+      };
+    </script>
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-TW'
-  };
-</script>
+    <title>少女的腦內多巴胺</title>
 
-  <title>少女的腦內多巴胺</title>
-  
+    <noscript>
+      <style>
+        .use-motion .brand,
+        .use-motion .menu-item,
+        .sidebar-inner,
+        .use-motion .post-block,
+        .use-motion .pagination,
+        .use-motion .comments,
+        .use-motion .post-header,
+        .use-motion .post-body,
+        .use-motion .collection-header {
+          opacity: initial;
+        }
 
+        .use-motion .site-title,
+        .use-motion .site-subtitle {
+          opacity: initial;
+          top: initial;
+        }
 
+        .use-motion .logo-line-before i {
+          left: initial;
+        }
+        .use-motion .logo-line-after i {
+          right: initial;
+        }
+      </style>
+    </noscript>
+  </head>
 
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div class="container">
+      <div class="headband"></div>
 
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner">
+          <div class="site-brand-container">
+            <div class="site-nav-toggle">
+              <div class="toggle" aria-label="切換導航欄">
+                <span class="toggle-line toggle-line-first"></span>
+                <span class="toggle-line toggle-line-middle"></span>
+                <span class="toggle-line toggle-line-last"></span>
+              </div>
+            </div>
 
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">少女的腦內多巴胺</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20211018/749274.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sshaannnn.png">
-      <meta itemprop="name" content="SHAN WU">
-      <meta itemprop="description" content="腦容量不足的前端(x)全端(o)工程師">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="少女的腦內多巴胺">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20211018/749274.html" class="post-title-link" itemprop="url">Node.js - 使用 Node.js 簡易爬蟲</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-10-18 15:46:55" itemprop="dateCreated datePublished" datetime="2021-10-18T15:46:55+08:00">2021-10-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-11-18 11:02:56" itemprop="dateModified" datetime="2021-11-18T11:02:56+08:00">2021-11-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Node-js/" itemprop="url" rel="index"><span itemprop="name">Node.js</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/20211018/749274.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20211018/749274.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>使用 Node.js 快速撈取需要的內容。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/20211018/749274.html">
-                閱讀全文 &raquo;
+            <div class="site-meta">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before"><i></i></span>
+                <h1 class="site-title">少女的腦內多巴胺</h1>
+                <span class="logo-line-after"><i></i></span>
               </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210825/842960.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sshaannnn.png">
-      <meta itemprop="name" content="SHAN WU">
-      <meta itemprop="description" content="腦容量不足的前端(x)全端(o)工程師">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="少女的腦內多巴胺">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210825/842960.html" class="post-title-link" itemprop="url">Angular + C# DotNetZip 實現下載 Zip 文件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2021-08-25 09:49:14 / 修改時間：15:52:46" itemprop="dateCreated datePublished" datetime="2021-08-25T09:49:14+08:00">2021-08-25</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Angular/" itemprop="url" rel="index"><span itemprop="name">Angular</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Angular/Net/" itemprop="url" rel="index"><span itemprop="name">.Net</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/20210825/842960.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210825/842960.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>起源於某天客戶突然要求前端下載的文件 (.txt) 無法讓使用者直接修改，因此主管表示那就先把 .txt 的內容使用 AES256 加密，最後再用 Zip 打包 .txt 並且將 Zip 加密讓前端下載。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/20210825/842960.html">
-                閱讀全文 &raquo;
-              </a>
+            <div class="site-nav-right">
+              <div class="toggle popup-trigger"></div>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210512/058310.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sshaannnn.png">
-      <meta itemprop="name" content="SHAN WU">
-      <meta itemprop="description" content="腦容量不足的前端(x)全端(o)工程師">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="少女的腦內多巴胺">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210512/058310.html" class="post-title-link" itemprop="url">21 天 Bootstrap 5 新手實戰營 - Week 1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-05-12 09:44:33" itemprop="dateCreated datePublished" datetime="2021-05-12T09:44:33+08:00">2021-05-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-13 11:20:05" itemprop="dateModified" datetime="2021-05-13T11:20:05+08:00">2021-05-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Bootstrap-5/" itemprop="url" rel="index"><span itemprop="name">Bootstrap 5</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/20210512/058310.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210512/058310.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>從 0 開始的 Bootstrap 5 課程，感謝洧杰校長，希望自己能持續更新。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/20210512/058310.html">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210511/910458.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sshaannnn.png">
-      <meta itemprop="name" content="SHAN WU">
-      <meta itemprop="description" content="腦容量不足的前端(x)全端(o)工程師">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="少女的腦內多巴胺">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210511/910458.html" class="post-title-link" itemprop="url">JS - 「同步」與「非同步」</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-05-11 12:28:07" itemprop="dateCreated datePublished" datetime="2021-05-11T12:28:07+08:00">2021-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-13 10:21:37" itemprop="dateModified" datetime="2021-05-13T10:21:37+08:00">2021-05-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/20210511/910458.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210511/910458.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Javascript到底是「同步」還是「非同步」？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/20210511/910458.html">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210505/013829.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sshaannnn.png">
-      <meta itemprop="name" content="SHAN WU">
-      <meta itemprop="description" content="腦容量不足的前端(x)全端(o)工程師">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="少女的腦內多巴胺">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210505/013829.html" class="post-title-link" itemprop="url">Angular - 更改 Title 及 Icon</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-05-05 17:12:28" itemprop="dateCreated datePublished" datetime="2021-05-05T17:12:28+08:00">2021-05-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-11 12:28:33" itemprop="dateModified" datetime="2021-05-11T12:28:33+08:00">2021-05-11</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Angular/" itemprop="url" rel="index"><span itemprop="name">Angular</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/20210505/013829.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210505/013829.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>快速更改一成不變的 Title 及網頁 Icon。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/20210505/013829.html">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210429/917901.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sshaannnn.png">
-      <meta itemprop="name" content="SHAN WU">
-      <meta itemprop="description" content="腦容量不足的前端(x)全端(o)工程師">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="少女的腦內多巴胺">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210429/917901.html" class="post-title-link" itemprop="url">Angular - 組件傳值</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-04-29 15:28:21" itemprop="dateCreated datePublished" datetime="2021-04-29T15:28:21+08:00">2021-04-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-12 14:24:20" itemprop="dateModified" datetime="2021-05-12T14:24:20+08:00">2021-05-12</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Angular/" itemprop="url" rel="index"><span itemprop="name">Angular</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/20210429/917901.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210429/917901.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>父傳子、子傳父、傳來傳去傳到哪。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/20210429/917901.html">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210422/297699.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sshaannnn.png">
-      <meta itemprop="name" content="SHAN WU">
-      <meta itemprop="description" content="腦容量不足的前端(x)全端(o)工程師">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="少女的腦內多巴胺">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210422/297699.html" class="post-title-link" itemprop="url">Git commit 規範</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-04-22 11:56:44" itemprop="dateCreated datePublished" datetime="2021-04-22T11:56:44+08:00">2021-04-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-04-29 15:32:07" itemprop="dateModified" datetime="2021-04-29T15:32:07+08:00">2021-04-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/20210422/297699.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210422/297699.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>此篇文章來自於某天主管突然要我把某篇很長的git規範整理成言簡意賅的版本。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/20210422/297699.html">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://sshaannnn.github.io/20210420/490932.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/sshaannnn.png">
-      <meta itemprop="name" content="SHAN WU">
-      <meta itemprop="description" content="腦容量不足的前端(x)全端(o)工程師">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="少女的腦內多巴胺">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210420/490932.html" class="post-title-link" itemprop="url">JS - 「傳值」或「傳址」</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2021-04-20 11:24:23" itemprop="dateCreated datePublished" datetime="2021-04-20T11:24:23+08:00">2021-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2021-05-06 13:05:53" itemprop="dateModified" datetime="2021-05-06T13:05:53+08:00">2021-05-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index"><span itemprop="name">Javascript</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/20210420/490932.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="20210420/490932.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Javascript到底是「傳值」還是「傳址」？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/20210420/490932.html">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-
-
-
           </div>
-         
-  <div style="">
-  
 
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-  </div>
+          <nav class="site-nav">
+            <ul id="menu" class="main-menu menu">
+              <li class="menu-item menu-item-home">
+                <a href="/" rel="section"
+                  ><i class="fa fa-home fa-fw"></i>首頁</a
+                >
+              </li>
+              <li class="menu-item menu-item-tags">
+                <a href="/tags/" rel="section"
+                  ><i class="fa fa-tags fa-fw"></i>標籤</a
+                >
+              </li>
+              <li class="menu-item menu-item-categories">
+                <a href="/categories/" rel="section"
+                  ><i class="fa fa-th fa-fw"></i>分類</a
+                >
+              </li>
+              <li class="menu-item menu-item-archives">
+                <a href="/archives/" rel="section"
+                  ><i class="fa fa-archive fa-fw"></i>歸檔</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
+      </header>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="SHAN WU"
-      src="/images/sshaannnn.png">
-  <p class="site-author-name" itemprop="name">SHAN WU</p>
-  <div class="site-description" itemprop="description">腦容量不足的前端(x)全端(o)工程師</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">8</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/sshaannnn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sshaannnn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:ysshaannnn@gmail.com" title="E-Mail → mailto:ysshaannnn@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/ysshaannnn/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;ysshaannnn&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
-      </span>
-  </div>
-
-
-
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        <span>0%</span>
       </div>
 
+      <main class="main">
+        <div class="main-inner">
+          <div class="content-wrap">
+            <div class="content index posts-expand">
+              <article
+                itemscope
+                itemtype="http://schema.org/Article"
+                class="post-block"
+                lang="zh-TW"
+              >
+                <link
+                  itemprop="mainEntityOfPage"
+                  href="https://sshaannnn.github.io/20211018/749274.html"
+                />
+
+                <span
+                  hidden
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <meta itemprop="image" content="/images/sshaannnn.png" />
+                  <meta itemprop="name" content="SHAN WU" />
+                  <meta
+                    itemprop="description"
+                    content="腦容量不足的前端(x)全端(o)工程師"
+                  />
+                </span>
+
+                <span
+                  hidden
+                  itemprop="publisher"
+                  itemscope
+                  itemtype="http://schema.org/Organization"
+                >
+                  <meta itemprop="name" content="少女的腦內多巴胺" />
+                </span>
+                <header class="post-header">
+                  <h2 class="post-title" itemprop="name headline">
+                    <a
+                      href="/20211018/749274.html"
+                      class="post-title-link"
+                      itemprop="url"
+                      >Node.js - 使用 Node.js 簡易爬蟲</a
+                    >
+                  </h2>
+
+                  <div class="post-meta">
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                      </span>
+                      <span class="post-meta-item-text">發表於</span>
+
+                      <time
+                        title="創建時間：2021-10-18 15:46:55"
+                        itemprop="dateCreated datePublished"
+                        datetime="2021-10-18T15:46:55+08:00"
+                        >2021-10-18</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar-check"></i>
+                      </span>
+                      <span class="post-meta-item-text">更新於</span>
+                      <time
+                        title="修改時間：2021-11-18 11:02:56"
+                        itemprop="dateModified"
+                        datetime="2021-11-18T11:02:56+08:00"
+                        >2021-11-18</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-folder"></i>
+                      </span>
+                      <span class="post-meta-item-text">分類於</span>
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a
+                          href="/categories/Node-js/"
+                          itemprop="url"
+                          rel="index"
+                          ><span itemprop="name">Node.js</span></a
+                        >
+                      </span>
+                    </span>
+
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-comment"></i>
+                      </span>
+                      <span class="post-meta-item-text">Disqus：</span>
+
+                      <a
+                        title="disqus"
+                        href="/20211018/749274.html#disqus_thread"
+                        itemprop="discussionUrl"
+                      >
+                        <span
+                          class="post-comments-count disqus-comment-count"
+                          data-disqus-identifier="20211018/749274.html"
+                          itemprop="commentCount"
+                        ></span>
+                      </a>
+                    </span>
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+                  <p>使用 Node.js 快速撈取需要的內容。</p>
+                  <!--noindex-->
+                  <div class="post-button">
+                    <a class="btn" href="/20211018/749274.html">
+                      閱讀全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+                </div>
+
+                <footer class="post-footer">
+                  <div class="post-eof"></div>
+                </footer>
+              </article>
+
+              <article
+                itemscope
+                itemtype="http://schema.org/Article"
+                class="post-block"
+                lang="zh-TW"
+              >
+                <link
+                  itemprop="mainEntityOfPage"
+                  href="https://sshaannnn.github.io/20210825/842960.html"
+                />
+
+                <span
+                  hidden
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <meta itemprop="image" content="/images/sshaannnn.png" />
+                  <meta itemprop="name" content="SHAN WU" />
+                  <meta
+                    itemprop="description"
+                    content="腦容量不足的前端(x)全端(o)工程師"
+                  />
+                </span>
+
+                <span
+                  hidden
+                  itemprop="publisher"
+                  itemscope
+                  itemtype="http://schema.org/Organization"
+                >
+                  <meta itemprop="name" content="少女的腦內多巴胺" />
+                </span>
+                <header class="post-header">
+                  <h2 class="post-title" itemprop="name headline">
+                    <a
+                      href="/20210825/842960.html"
+                      class="post-title-link"
+                      itemprop="url"
+                      >Angular + C# DotNetZip 實現下載 Zip 文件</a
+                    >
+                  </h2>
+
+                  <div class="post-meta">
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                      </span>
+                      <span class="post-meta-item-text">發表於</span>
+
+                      <time
+                        title="創建時間：2021-08-25 09:49:14 / 修改時間：15:52:46"
+                        itemprop="dateCreated datePublished"
+                        datetime="2021-08-25T09:49:14+08:00"
+                        >2021-08-25</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-folder"></i>
+                      </span>
+                      <span class="post-meta-item-text">分類於</span>
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a
+                          href="/categories/Angular/"
+                          itemprop="url"
+                          rel="index"
+                          ><span itemprop="name">Angular</span></a
+                        >
+                      </span>
+                      ，
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a
+                          href="/categories/Angular/Net/"
+                          itemprop="url"
+                          rel="index"
+                          ><span itemprop="name">.Net</span></a
+                        >
+                      </span>
+                    </span>
+
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-comment"></i>
+                      </span>
+                      <span class="post-meta-item-text">Disqus：</span>
+
+                      <a
+                        title="disqus"
+                        href="/20210825/842960.html#disqus_thread"
+                        itemprop="discussionUrl"
+                      >
+                        <span
+                          class="post-comments-count disqus-comment-count"
+                          data-disqus-identifier="20210825/842960.html"
+                          itemprop="commentCount"
+                        ></span>
+                      </a>
+                    </span>
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+                  <p>
+                    起源於某天客戶突然要求前端下載的文件 (.txt)
+                    無法讓使用者直接修改，因此主管表示那就先把 .txt 的內容使用
+                    AES256 加密，最後再用 Zip 打包 .txt 並且將 Zip
+                    加密讓前端下載。
+                  </p>
+                  <!--noindex-->
+                  <div class="post-button">
+                    <a class="btn" href="/20210825/842960.html">
+                      閱讀全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+                </div>
+
+                <footer class="post-footer">
+                  <div class="post-eof"></div>
+                </footer>
+              </article>
+
+              <article
+                itemscope
+                itemtype="http://schema.org/Article"
+                class="post-block"
+                lang="zh-TW"
+              >
+                <link
+                  itemprop="mainEntityOfPage"
+                  href="https://sshaannnn.github.io/20210512/058310.html"
+                />
+
+                <span
+                  hidden
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <meta itemprop="image" content="/images/sshaannnn.png" />
+                  <meta itemprop="name" content="SHAN WU" />
+                  <meta
+                    itemprop="description"
+                    content="腦容量不足的前端(x)全端(o)工程師"
+                  />
+                </span>
+
+                <span
+                  hidden
+                  itemprop="publisher"
+                  itemscope
+                  itemtype="http://schema.org/Organization"
+                >
+                  <meta itemprop="name" content="少女的腦內多巴胺" />
+                </span>
+                <header class="post-header">
+                  <h2 class="post-title" itemprop="name headline">
+                    <a
+                      href="/20210512/058310.html"
+                      class="post-title-link"
+                      itemprop="url"
+                      >21 天 Bootstrap 5 新手實戰營 - Week 1</a
+                    >
+                  </h2>
+
+                  <div class="post-meta">
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                      </span>
+                      <span class="post-meta-item-text">發表於</span>
+
+                      <time
+                        title="創建時間：2021-05-12 09:44:33"
+                        itemprop="dateCreated datePublished"
+                        datetime="2021-05-12T09:44:33+08:00"
+                        >2021-05-12</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar-check"></i>
+                      </span>
+                      <span class="post-meta-item-text">更新於</span>
+                      <time
+                        title="修改時間：2021-05-13 11:20:05"
+                        itemprop="dateModified"
+                        datetime="2021-05-13T11:20:05+08:00"
+                        >2021-05-13</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-folder"></i>
+                      </span>
+                      <span class="post-meta-item-text">分類於</span>
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a
+                          href="/categories/Bootstrap-5/"
+                          itemprop="url"
+                          rel="index"
+                          ><span itemprop="name">Bootstrap 5</span></a
+                        >
+                      </span>
+                    </span>
+
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-comment"></i>
+                      </span>
+                      <span class="post-meta-item-text">Disqus：</span>
+
+                      <a
+                        title="disqus"
+                        href="/20210512/058310.html#disqus_thread"
+                        itemprop="discussionUrl"
+                      >
+                        <span
+                          class="post-comments-count disqus-comment-count"
+                          data-disqus-identifier="20210512/058310.html"
+                          itemprop="commentCount"
+                        ></span>
+                      </a>
+                    </span>
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+                  <p>
+                    從 0 開始的 Bootstrap 5
+                    課程，感謝洧杰校長，希望自己能持續更新。
+                  </p>
+                  <!--noindex-->
+                  <div class="post-button">
+                    <a class="btn" href="/20210512/058310.html">
+                      閱讀全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+                </div>
+
+                <footer class="post-footer">
+                  <div class="post-eof"></div>
+                </footer>
+              </article>
+
+              <article
+                itemscope
+                itemtype="http://schema.org/Article"
+                class="post-block"
+                lang="zh-TW"
+              >
+                <link
+                  itemprop="mainEntityOfPage"
+                  href="https://sshaannnn.github.io/20210511/910458.html"
+                />
+
+                <span
+                  hidden
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <meta itemprop="image" content="/images/sshaannnn.png" />
+                  <meta itemprop="name" content="SHAN WU" />
+                  <meta
+                    itemprop="description"
+                    content="腦容量不足的前端(x)全端(o)工程師"
+                  />
+                </span>
+
+                <span
+                  hidden
+                  itemprop="publisher"
+                  itemscope
+                  itemtype="http://schema.org/Organization"
+                >
+                  <meta itemprop="name" content="少女的腦內多巴胺" />
+                </span>
+                <header class="post-header">
+                  <h2 class="post-title" itemprop="name headline">
+                    <a
+                      href="/20210511/910458.html"
+                      class="post-title-link"
+                      itemprop="url"
+                      >JS - 「同步」與「非同步」</a
+                    >
+                  </h2>
+
+                  <div class="post-meta">
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                      </span>
+                      <span class="post-meta-item-text">發表於</span>
+
+                      <time
+                        title="創建時間：2021-05-11 12:28:07"
+                        itemprop="dateCreated datePublished"
+                        datetime="2021-05-11T12:28:07+08:00"
+                        >2021-05-11</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar-check"></i>
+                      </span>
+                      <span class="post-meta-item-text">更新於</span>
+                      <time
+                        title="修改時間：2021-05-13 10:21:37"
+                        itemprop="dateModified"
+                        datetime="2021-05-13T10:21:37+08:00"
+                        >2021-05-13</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-folder"></i>
+                      </span>
+                      <span class="post-meta-item-text">分類於</span>
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a
+                          href="/categories/Javascript/"
+                          itemprop="url"
+                          rel="index"
+                          ><span itemprop="name">Javascript</span></a
+                        >
+                      </span>
+                    </span>
+
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-comment"></i>
+                      </span>
+                      <span class="post-meta-item-text">Disqus：</span>
+
+                      <a
+                        title="disqus"
+                        href="/20210511/910458.html#disqus_thread"
+                        itemprop="discussionUrl"
+                      >
+                        <span
+                          class="post-comments-count disqus-comment-count"
+                          data-disqus-identifier="20210511/910458.html"
+                          itemprop="commentCount"
+                        ></span>
+                      </a>
+                    </span>
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+                  <p>Javascript到底是「同步」還是「非同步」？</p>
+                  <!--noindex-->
+                  <div class="post-button">
+                    <a class="btn" href="/20210511/910458.html">
+                      閱讀全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+                </div>
+
+                <footer class="post-footer">
+                  <div class="post-eof"></div>
+                </footer>
+              </article>
+
+              <article
+                itemscope
+                itemtype="http://schema.org/Article"
+                class="post-block"
+                lang="zh-TW"
+              >
+                <link
+                  itemprop="mainEntityOfPage"
+                  href="https://sshaannnn.github.io/20210505/013829.html"
+                />
+
+                <span
+                  hidden
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <meta itemprop="image" content="/images/sshaannnn.png" />
+                  <meta itemprop="name" content="SHAN WU" />
+                  <meta
+                    itemprop="description"
+                    content="腦容量不足的前端(x)全端(o)工程師"
+                  />
+                </span>
+
+                <span
+                  hidden
+                  itemprop="publisher"
+                  itemscope
+                  itemtype="http://schema.org/Organization"
+                >
+                  <meta itemprop="name" content="少女的腦內多巴胺" />
+                </span>
+                <header class="post-header">
+                  <h2 class="post-title" itemprop="name headline">
+                    <a
+                      href="/20210505/013829.html"
+                      class="post-title-link"
+                      itemprop="url"
+                      >Angular - 更改 Title 及 Icon</a
+                    >
+                  </h2>
+
+                  <div class="post-meta">
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                      </span>
+                      <span class="post-meta-item-text">發表於</span>
+
+                      <time
+                        title="創建時間：2021-05-05 17:12:28"
+                        itemprop="dateCreated datePublished"
+                        datetime="2021-05-05T17:12:28+08:00"
+                        >2021-05-05</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar-check"></i>
+                      </span>
+                      <span class="post-meta-item-text">更新於</span>
+                      <time
+                        title="修改時間：2021-05-11 12:28:33"
+                        itemprop="dateModified"
+                        datetime="2021-05-11T12:28:33+08:00"
+                        >2021-05-11</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-folder"></i>
+                      </span>
+                      <span class="post-meta-item-text">分類於</span>
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a
+                          href="/categories/Angular/"
+                          itemprop="url"
+                          rel="index"
+                          ><span itemprop="name">Angular</span></a
+                        >
+                      </span>
+                    </span>
+
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-comment"></i>
+                      </span>
+                      <span class="post-meta-item-text">Disqus：</span>
+
+                      <a
+                        title="disqus"
+                        href="/20210505/013829.html#disqus_thread"
+                        itemprop="discussionUrl"
+                      >
+                        <span
+                          class="post-comments-count disqus-comment-count"
+                          data-disqus-identifier="20210505/013829.html"
+                          itemprop="commentCount"
+                        ></span>
+                      </a>
+                    </span>
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+                  <p>快速更改一成不變的 Title 及網頁 Icon。</p>
+                  <!--noindex-->
+                  <div class="post-button">
+                    <a class="btn" href="/20210505/013829.html">
+                      閱讀全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+                </div>
+
+                <footer class="post-footer">
+                  <div class="post-eof"></div>
+                </footer>
+              </article>
+
+              <article
+                itemscope
+                itemtype="http://schema.org/Article"
+                class="post-block"
+                lang="zh-TW"
+              >
+                <link
+                  itemprop="mainEntityOfPage"
+                  href="https://sshaannnn.github.io/20210429/917901.html"
+                />
+
+                <span
+                  hidden
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <meta itemprop="image" content="/images/sshaannnn.png" />
+                  <meta itemprop="name" content="SHAN WU" />
+                  <meta
+                    itemprop="description"
+                    content="腦容量不足的前端(x)全端(o)工程師"
+                  />
+                </span>
+
+                <span
+                  hidden
+                  itemprop="publisher"
+                  itemscope
+                  itemtype="http://schema.org/Organization"
+                >
+                  <meta itemprop="name" content="少女的腦內多巴胺" />
+                </span>
+                <header class="post-header">
+                  <h2 class="post-title" itemprop="name headline">
+                    <a
+                      href="/20210429/917901.html"
+                      class="post-title-link"
+                      itemprop="url"
+                      >Angular - 組件傳值</a
+                    >
+                  </h2>
+
+                  <div class="post-meta">
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                      </span>
+                      <span class="post-meta-item-text">發表於</span>
+
+                      <time
+                        title="創建時間：2021-04-29 15:28:21"
+                        itemprop="dateCreated datePublished"
+                        datetime="2021-04-29T15:28:21+08:00"
+                        >2021-04-29</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar-check"></i>
+                      </span>
+                      <span class="post-meta-item-text">更新於</span>
+                      <time
+                        title="修改時間：2021-05-12 14:24:20"
+                        itemprop="dateModified"
+                        datetime="2021-05-12T14:24:20+08:00"
+                        >2021-05-12</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-folder"></i>
+                      </span>
+                      <span class="post-meta-item-text">分類於</span>
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a
+                          href="/categories/Angular/"
+                          itemprop="url"
+                          rel="index"
+                          ><span itemprop="name">Angular</span></a
+                        >
+                      </span>
+                    </span>
+
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-comment"></i>
+                      </span>
+                      <span class="post-meta-item-text">Disqus：</span>
+
+                      <a
+                        title="disqus"
+                        href="/20210429/917901.html#disqus_thread"
+                        itemprop="discussionUrl"
+                      >
+                        <span
+                          class="post-comments-count disqus-comment-count"
+                          data-disqus-identifier="20210429/917901.html"
+                          itemprop="commentCount"
+                        ></span>
+                      </a>
+                    </span>
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+                  <p>父傳子、子傳父、傳來傳去傳到哪。</p>
+                  <!--noindex-->
+                  <div class="post-button">
+                    <a class="btn" href="/20210429/917901.html">
+                      閱讀全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+                </div>
+
+                <footer class="post-footer">
+                  <div class="post-eof"></div>
+                </footer>
+              </article>
+
+              <article
+                itemscope
+                itemtype="http://schema.org/Article"
+                class="post-block"
+                lang="zh-TW"
+              >
+                <link
+                  itemprop="mainEntityOfPage"
+                  href="https://sshaannnn.github.io/20210422/297699.html"
+                />
+
+                <span
+                  hidden
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <meta itemprop="image" content="/images/sshaannnn.png" />
+                  <meta itemprop="name" content="SHAN WU" />
+                  <meta
+                    itemprop="description"
+                    content="腦容量不足的前端(x)全端(o)工程師"
+                  />
+                </span>
+
+                <span
+                  hidden
+                  itemprop="publisher"
+                  itemscope
+                  itemtype="http://schema.org/Organization"
+                >
+                  <meta itemprop="name" content="少女的腦內多巴胺" />
+                </span>
+                <header class="post-header">
+                  <h2 class="post-title" itemprop="name headline">
+                    <a
+                      href="/20210422/297699.html"
+                      class="post-title-link"
+                      itemprop="url"
+                      >Git commit 規範</a
+                    >
+                  </h2>
+
+                  <div class="post-meta">
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                      </span>
+                      <span class="post-meta-item-text">發表於</span>
+
+                      <time
+                        title="創建時間：2021-04-22 11:56:44"
+                        itemprop="dateCreated datePublished"
+                        datetime="2021-04-22T11:56:44+08:00"
+                        >2021-04-22</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar-check"></i>
+                      </span>
+                      <span class="post-meta-item-text">更新於</span>
+                      <time
+                        title="修改時間：2021-04-29 15:32:07"
+                        itemprop="dateModified"
+                        datetime="2021-04-29T15:32:07+08:00"
+                        >2021-04-29</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-folder"></i>
+                      </span>
+                      <span class="post-meta-item-text">分類於</span>
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a href="/categories/Git/" itemprop="url" rel="index"
+                          ><span itemprop="name">Git</span></a
+                        >
+                      </span>
+                    </span>
+
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-comment"></i>
+                      </span>
+                      <span class="post-meta-item-text">Disqus：</span>
+
+                      <a
+                        title="disqus"
+                        href="/20210422/297699.html#disqus_thread"
+                        itemprop="discussionUrl"
+                      >
+                        <span
+                          class="post-comments-count disqus-comment-count"
+                          data-disqus-identifier="20210422/297699.html"
+                          itemprop="commentCount"
+                        ></span>
+                      </a>
+                    </span>
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+                  <p>
+                    此篇文章來自於某天主管突然要我把某篇很長的git規範整理成言簡意賅的版本。
+                  </p>
+                  <!--noindex-->
+                  <div class="post-button">
+                    <a class="btn" href="/20210422/297699.html">
+                      閱讀全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+                </div>
+
+                <footer class="post-footer">
+                  <div class="post-eof"></div>
+                </footer>
+              </article>
+
+              <article
+                itemscope
+                itemtype="http://schema.org/Article"
+                class="post-block"
+                lang="zh-TW"
+              >
+                <link
+                  itemprop="mainEntityOfPage"
+                  href="https://sshaannnn.github.io/20210420/490932.html"
+                />
+
+                <span
+                  hidden
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <meta itemprop="image" content="/images/sshaannnn.png" />
+                  <meta itemprop="name" content="SHAN WU" />
+                  <meta
+                    itemprop="description"
+                    content="腦容量不足的前端(x)全端(o)工程師"
+                  />
+                </span>
+
+                <span
+                  hidden
+                  itemprop="publisher"
+                  itemscope
+                  itemtype="http://schema.org/Organization"
+                >
+                  <meta itemprop="name" content="少女的腦內多巴胺" />
+                </span>
+                <header class="post-header">
+                  <h2 class="post-title" itemprop="name headline">
+                    <a
+                      href="/20210420/490932.html"
+                      class="post-title-link"
+                      itemprop="url"
+                      >JS - 「傳值」或「傳址」</a
+                    >
+                  </h2>
+
+                  <div class="post-meta">
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                      </span>
+                      <span class="post-meta-item-text">發表於</span>
+
+                      <time
+                        title="創建時間：2021-04-20 11:24:23"
+                        itemprop="dateCreated datePublished"
+                        datetime="2021-04-20T11:24:23+08:00"
+                        >2021-04-20</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-calendar-check"></i>
+                      </span>
+                      <span class="post-meta-item-text">更新於</span>
+                      <time
+                        title="修改時間：2021-05-06 13:05:53"
+                        itemprop="dateModified"
+                        datetime="2021-05-06T13:05:53+08:00"
+                        >2021-05-06</time
+                      >
+                    </span>
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-folder"></i>
+                      </span>
+                      <span class="post-meta-item-text">分類於</span>
+                      <span
+                        itemprop="about"
+                        itemscope
+                        itemtype="http://schema.org/Thing"
+                      >
+                        <a
+                          href="/categories/Javascript/"
+                          itemprop="url"
+                          rel="index"
+                          ><span itemprop="name">Javascript</span></a
+                        >
+                      </span>
+                    </span>
+
+                    <span class="post-meta-item">
+                      <span class="post-meta-item-icon">
+                        <i class="far fa-comment"></i>
+                      </span>
+                      <span class="post-meta-item-text">Disqus：</span>
+
+                      <a
+                        title="disqus"
+                        href="/20210420/490932.html#disqus_thread"
+                        itemprop="discussionUrl"
+                      >
+                        <span
+                          class="post-comments-count disqus-comment-count"
+                          data-disqus-identifier="20210420/490932.html"
+                          itemprop="commentCount"
+                        ></span>
+                      </a>
+                    </span>
+                  </div>
+                </header>
+
+                <div class="post-body" itemprop="articleBody">
+                  <p>Javascript到底是「傳值」還是「傳址」？</p>
+                  <!--noindex-->
+                  <div class="post-button">
+                    <a class="btn" href="/20210420/490932.html">
+                      閱讀全文 &raquo;
+                    </a>
+                  </div>
+                  <!--/noindex-->
+                </div>
+
+                <footer class="post-footer">
+                  <div class="post-eof"></div>
+                </footer>
+              </article>
+            </div>
+
+            <div style="">
+              <script>
+                window.addEventListener('tabs:register', () => {
+                  let { activeClass } = CONFIG.comments;
+                  if (CONFIG.comments.storage) {
+                    activeClass =
+                      localStorage.getItem('comments_active') || activeClass;
+                  }
+                  if (activeClass) {
+                    let activeTab = document.querySelector(
+                      `a[href="#comment-${activeClass}"]`
+                    );
+                    if (activeTab) {
+                      activeTab.click();
+                    }
+                  }
+                });
+                if (CONFIG.comments.storage) {
+                  window.addEventListener('tabs:click', (event) => {
+                    if (
+                      !event.target.matches(
+                        '.tabs-comment .tab-content .tab-pane'
+                      )
+                    )
+                      return;
+                    let commentClass = event.target.classList[1];
+                    localStorage.setItem('comments_active', commentClass);
+                  });
+                }
+              </script>
+            </div>
+          </div>
+
+          <div class="toggle sidebar-toggle">
+            <span class="toggle-line toggle-line-first"></span>
+            <span class="toggle-line toggle-line-middle"></span>
+            <span class="toggle-line toggle-line-last"></span>
+          </div>
+
+          <aside class="sidebar">
+            <div class="sidebar-inner">
+              <ul class="sidebar-nav motion-element">
+                <li class="sidebar-nav-toc">文章目錄</li>
+                <li class="sidebar-nav-overview">本站概要</li>
+              </ul>
+
+              <!--noindex-->
+              <div class="post-toc-wrap sidebar-panel"></div>
+              <!--/noindex-->
+
+              <div class="site-overview-wrap sidebar-panel">
+                <div
+                  class="site-author motion-element"
+                  itemprop="author"
+                  itemscope
+                  itemtype="http://schema.org/Person"
+                >
+                  <img
+                    class="site-author-image"
+                    itemprop="image"
+                    alt="SHAN WU"
+                    src="/images/sshaannnn.png"
+                  />
+                  <p class="site-author-name" itemprop="name">SHAN WU</p>
+                  <div class="site-description" itemprop="description">
+                    腦容量不足的前端(x)全端(o)工程師
+                  </div>
+                </div>
+                <div class="site-state-wrap motion-element">
+                  <nav class="site-state">
+                    <div class="site-state-item site-state-posts">
+                      <a href="/archives/">
+                        <span class="site-state-item-count">8</span>
+                        <span class="site-state-item-name">文章</span>
+                      </a>
+                    </div>
+                    <div class="site-state-item site-state-categories">
+                      <a href="/categories/">
+                        <span class="site-state-item-count">6</span>
+                        <span class="site-state-item-name">分類</span></a
+                      >
+                    </div>
+                    <div class="site-state-item site-state-tags">
+                      <a href="/tags/">
+                        <span class="site-state-item-count">8</span>
+                        <span class="site-state-item-name">標籤</span></a
+                      >
+                    </div>
+                  </nav>
+                </div>
+                <div class="links-of-author motion-element">
+                  <span class="links-of-author-item">
+                    <a
+                      href="https://github.com/sshaannnn"
+                      title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sshaannnn"
+                      rel="noopener"
+                      target="_blank"
+                      ><i class="fab fa-github fa-fw"></i
+                    ></a>
+                  </span>
+                  <span class="links-of-author-item">
+                    <a
+                      href="mailto:ysshaannnn@gmail.com"
+                      title="E-Mail → mailto:ysshaannnn@gmail.com"
+                      rel="noopener"
+                      target="_blank"
+                      ><i class="fa fa-envelope fa-fw"></i
+                    ></a>
+                  </span>
+                  <span class="links-of-author-item">
+                    <a
+                      href="https://www.linkedin.com/in/yswuu/"
+                      title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yswuu&#x2F;"
+                      rel="noopener"
+                      target="_blank"
+                      ><i class="fab fa-linkedin fa-fw"></i
+                    ></a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <div id="sidebar-dimmer"></div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="copyright">
+            &copy;
+            <span itemprop="copyrightYear">2021</span>
+            <span class="with-love">
+              <i class="fas fa-plane"></i>
+            </span>
+            <span class="author" itemprop="copyrightHolder"
+              >少女的腦內多巴胺</span
+            >
+          </div>
+        </div>
+      </footer>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
+    <script src="/lib/anime.min.js"></script>
 
-      </div>
-    </main>
+    <script src="/js/utils.js"></script>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+    <script src="/js/schemes/pisces.js"></script>
 
-        
+    <script src="/js/next-boot.js"></script>
 
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fas fa-plane"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">少女的腦內多巴胺</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://sshaannnn.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-
-</body>
+    <script>
+      function loadCount() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://sshaannnn.disqus.com/count.js';
+        s.id = 'dsq-count-scr';
+        (d.head || d.body).appendChild(s);
+      }
+      // defer loading until the whole page loading is completed
+      window.addEventListener('load', loadCount, false);
+    </script>
+  </body>
 </html>
